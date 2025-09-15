@@ -3,9 +3,9 @@
 """Generates LaTeX, markdown, and plaintext copies of my cv."""
 
 __author__ = [
-    'Brandon Amos <http://bamos.github.io>',
-    'Ellis Michael <http://ellismichael.com>',
-    'Nathan Lambert <https://natolambert.com>',
+    "Brandon Amos <http://bamos.github.io>",
+    "Ellis Michael <http://ellismichael.com>",
+    "Nathan Lambert <https://natolambert.com>",
 ]
 
 import argparse
@@ -29,55 +29,60 @@ from jinja2 import Environment, FileSystemLoader
 # init
 api = HfApi()
 
+
 def human_format(num):
-    num = float('{:.3g}'.format(num))
+    num = float("{:.3g}".format(num))
     magnitude = 0
     while abs(num) >= 1000:
         magnitude += 1
         num /= 1000.0
-    return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
+    return "{}{}".format(
+        "{:f}".format(num).rstrip("0").rstrip("."), ["", "K", "M", "B", "T"][magnitude]
+    )
+
 
 def get_scholar_stats(scholar_id):
-    scholar_stats = shelve.open('scholar_stats.shelf')
+    scholar_stats = shelve.open("scholar_stats.shelf")
     author = scholarly.search_author_id(scholar_id)
-    author = scholarly.fill(author, sections=['indices'])
-    scholar_stats['h_index'] = author['hindex']
-    scholar_stats['citations'] = truncate_to_k(author['citedby'])
+    author = scholarly.fill(author, sections=["indices"])
+    scholar_stats["h_index"] = author["hindex"]
+    scholar_stats["citations"] = truncate_to_k(author["citedby"])
     return scholar_stats
+
 
 def truncate_to_k(num):
     if num < 1000:
         return str(num)
-    num_k = math.trunc(num/100)/10
-    num_k = f'{num_k:.1f}'
-    num_k = num_k[:-2] if num_k.endswith('.0') else num_k
+    num_k = math.trunc(num / 100) / 10
+    num_k = f"{num_k:.1f}"
+    num_k = num_k[:-2] if num_k.endswith(".0") else num_k
     return f"{num_k}k+"
+
 
 # TODO add function like `add_repo_data` that works for HF
 def add_hf_data(context, config):
     for item in config:
-        assert 'id' in item
-        assert 'year' in item
-        assert 'type' in item
-        assert item['type'] in ['M', 'D', 'S']
+        assert "id" in item
+        assert "year" in item
+        assert "type" in item
+        assert item["type"] in ["M", "D", "S"]
 
-        asset_name = item['id']
-        type = item['type']
-        if type == 'M':
-            model_info = api.model_info(asset_name) # now hits the real repo
+        asset_name = item["id"]
+        type = item["type"]
+        if type == "M":
+            model_info = api.model_info(asset_name)  # now hits the real repo
             likes = model_info.likes
             item["repo_url"] = f"https://huggingface.co/{asset_name}"
-        elif type == 'D':
+        elif type == "D":
             data_info = api.dataset_info(asset_name)
             likes = data_info.likes
-            item['repo_url'] = "https://huggingface.co/" + "datasets/" + asset_name
-        elif type == 'S':
+            item["repo_url"] = "https://huggingface.co/" + "datasets/" + asset_name
+        elif type == "S":
             space_info = api.space_info(asset_name)
             likes = space_info.likes
-            item['repo_url'] = "https://huggingface.co/" + "spaces/" + asset_name
+            item["repo_url"] = "https://huggingface.co/" + "spaces/" + asset_name
 
-        item['id'] = item['id'].replace("_", "-")
-
+        item["id"] = item["id"].replace("_", "-")
 
         # Scrape the repo HTML instead of using the GitHub API
         # to avoid being rate-limited (sorry), and be nice by
@@ -88,7 +93,7 @@ def add_hf_data(context, config):
         #     repo_htmls[short_name] = r.content
         # soup = BeautifulSoup(repo_htmls[short_name], 'html.parser')
 
-        item['stars'] = truncate_to_k(likes)
+        item["stars"] = truncate_to_k(likes)
 
 
 # TODO: Could really be cleaned up
@@ -101,9 +106,9 @@ def get_pub_md(context, config):
         authors = sep.join(authors)
 
         # Hacky fix for special characters.
-        authors = authors.replace(r'\"o', '&ouml;')
-        authors = authors.replace(r'\'o', '&oacute;')
-        authors = authors.replace(r"\'\i", '&iacute;')
+        authors = authors.replace(r"\"o", "&ouml;")
+        authors = authors.replace(r"\'o", "&oacute;")
+        authors = authors.replace(r"\'\i", "&iacute;")
 
         return authors
 
@@ -113,19 +118,19 @@ def get_pub_md(context, config):
             new_auth = author.split(", ")
             assert len(new_auth) == 2
             new_auth = new_auth[1] + " " + new_auth[0]
-            author_urls = config['author_urls']
+            author_urls = config["author_urls"]
 
             k = list(filter(lambda k: k in new_auth, author_urls.keys()))
-            if len(k) == 0 and config['name'] not in new_auth:
+            if len(k) == 0 and config["name"] not in new_auth:
                 print(f"+ Author URL not found for {new_auth}")
 
-            new_auth = new_auth.replace(' ', '&nbsp;')
+            new_auth = new_auth.replace(" ", "&nbsp;")
             if len(k) > 0:
                 assert len(k) == 1, k
                 url = author_urls[k[0]]
                 new_auth = f"<a href='{url}' target='_blank'>{new_auth}</a>"
 
-            if config['name'] in new_auth:
+            if config["name"] in new_auth:
                 new_auth = "<strong>" + new_auth + "</strong>"
 
             # if 'zico' in author.lower():
@@ -141,9 +146,9 @@ def get_pub_md(context, config):
         return formatted_authors
 
     def _get_pub_str(pub, prefix, gidx, includeImage):
-        author_str = _get_author_str(pub['author'])
+        author_str = _get_author_str(pub["author"])
         # prefix = category['prefix']
-        title = pub['title']
+        title = pub["title"]
         # if title[-1] not in ("?", ".", "!"):
         #    title += ","
         # title = '"{}"'.format(title)
@@ -152,52 +157,58 @@ def get_pub_md(context, config):
         #         pub['link'], title)
         title = title.replace("\n", " ")
 
-        assert('_venue' in pub and 'year' in pub)
-        yearVenue = "{} {}".format(pub['_venue'], pub['year'])
+        assert "_venue" in pub and "year" in pub
+        yearVenue = "{} {}".format(pub["_venue"], pub["year"])
 
-        highlight = 'selected' in pub
+        highlight = "selected" in pub
         # if highlight:
-        imgStr = '<img src="images/publications/{}.png" onerror="this.style.display=\'none\'" style=\'border: none; height: 100px;\'/>'.format(pub['ID'], pub['ID'])
+        imgStr = "<img src=\"images/publications/{}.png\" onerror=\"this.style.display='none'\" style='border: none; height: 100px;'/>".format(
+            pub["ID"], pub["ID"]
+        )
         # else:
         #     imgStr = ''
         links = []
-        abstract = ''
-        if 'abstract' in pub:
-            links.append("""
+        abstract = ""
+        if "abstract" in pub:
+            links.append(
+                """
 [<a href='javascript:;'
-    onclick=\'$(\"#abs_{}{}\").toggle()\'>abs</a>]""".format(pub['ID'], prefix))
-            abstract = context.make_replacements(pub['abstract'])
-        if 'link' in pub:
-            imgStr = "<a href=\'{}\' target='_blank'>{}</a> ".format(
-                pub['link'], imgStr)
-            title = "<a href=\'{}\' target='_blank'>{}</a> ".format(
-                pub['link'], title)
+    onclick=\'$(\"#abs_{}{}\").toggle()\'>abs</a>]""".format(
+                    pub["ID"], prefix
+                )
+            )
+            abstract = context.make_replacements(pub["abstract"])
+        if "link" in pub:
+            imgStr = "<a href='{}' target='_blank'>{}</a> ".format(pub["link"], imgStr)
+            title = "<a href='{}' target='_blank'>{}</a> ".format(pub["link"], title)
             # links.append(
             #     "[<a href=\'{}\' target='_blank'>pdf</a>] ".format(pub['link']))
 
-        for base in ['code', 'slides', 'talk']:
-            key = base + 'url'
+        for base in ["code", "slides", "talk"]:
+            key = base + "url"
             if key in pub:
                 links.append(
-                    "[<a href=\'{}\' target='_blank'>{}</a>] ".format(
-                        pub[key], base))
-        links = ' '.join(links)
+                    "[<a href='{}' target='_blank'>{}</a>] ".format(pub[key], base)
+                )
+        links = " ".join(links)
 
         if abstract:
-            abstract = '''
+            abstract = """
 <div id="abs_{}{}" style="text-align: justify; display: none" markdown="1">
 {}
 </div>
-'''.format(pub['ID'], prefix, abstract)
+""".format(
+                pub["ID"], prefix, abstract
+            )
 
-        if '_note' in pub:
+        if "_note" in pub:
             note_str = f"({pub['_note']})"
         else:
-            note_str = ''
+            note_str = ""
 
-        tr_style = 'style="background-color: #ffffd0"' if highlight else ''
+        tr_style = 'style="background-color: #ffffd0"' if highlight else ""
         if includeImage:
-            return '''
+            return """
 <tr id="tr-{}" {}>
 <td>
 <div class="col-sm-10">
@@ -210,11 +221,21 @@ def get_pub_md(context, config):
 <div class="col-sm-2">{}</div>
 </td>
 </tr>
-'''.format(
-    pub['ID'], tr_style, title, author_str, yearVenue, note_str, prefix, gidx, links, abstract, imgStr,
-)
+""".format(
+                pub["ID"],
+                tr_style,
+                title,
+                author_str,
+                yearVenue,
+                note_str,
+                prefix,
+                gidx,
+                links,
+                abstract,
+                imgStr,
+            )
         else:
-            return '''
+            return """
 <tr id="tr-{}" {}>
 <td>
     <em>{}</em><br>
@@ -224,18 +245,27 @@ def get_pub_md(context, config):
     {}
 </td>
 </tr>
-'''.format(
-    pub['ID'], tr_style, title, author_str, yearVenue, note_str, prefix, gidx, links, abstract
-)
+""".format(
+                pub["ID"],
+                tr_style,
+                title,
+                author_str,
+                yearVenue,
+                note_str,
+                prefix,
+                gidx,
+                links,
+                abstract,
+            )
 
     def load_and_replace(bibtex_file):
-        with open(os.path.join('publications', bibtex_file), 'r') as f:
+        with open(os.path.join("publications", bibtex_file), "r") as f:
             p = BibTexParser(f.read(), bc.author).get_entry_list()
         for pub in p:
             for field in pub:
-                if field != 'link':
+                if field != "link":
                     pub[field] = context.make_replacements(pub[field])
-            pub['author'] = _format_author_list(pub['author'])
+            pub["author"] = _format_author_list(pub["author"])
         return p
 
     # if 'categories' in config:
@@ -257,26 +287,26 @@ def get_pub_md(context, config):
     #         contents.append(type_content)
     # else:
 
-    include_image = config['include_image']
-    sort_bib = config['sort_bib']
-    group_by_year = config['group_by_year']
+    include_image = config["include_image"]
+    sort_bib = config["sort_bib"]
+    group_by_year = config["group_by_year"]
 
     contents = {}
-    pubs = load_and_replace(config['file'])
+    pubs = load_and_replace(config["file"])
     sep = "\n"
 
     if sort_bib:
-        pubs = sorted(pubs, key=lambda pub: int(pub['year']), reverse=True)
+        pubs = sorted(pubs, key=lambda pub: int(pub["year"]), reverse=True)
 
     if group_by_year:
         for pub in pubs:
-            m = re.search('(\d{4})', pub['year'])
+            m = re.search("(\d{4})", pub["year"])
             assert m is not None
-            pub['year_int'] = int(m.group(1))
+            pub["year_int"] = int(m.group(1))
 
-        details = ''
+        details = ""
         gidx = 1
-        for year, year_pubs in groupby(pubs, lambda pub: pub['year_int']):
+        for year, year_pubs in groupby(pubs, lambda pub: pub["year_int"]):
             print_year = year >= 2015
 
             if print_year:
@@ -284,27 +314,26 @@ def get_pub_md(context, config):
                 if year == 2015:
                     year_str = "2015 and earlier"
 
-                details += f'<h2>{year_str}</h2>\n'
+                details += f"<h2>{year_str}</h2>\n"
                 details += '<table class="table table-hover">\n'
 
             for i, pub in enumerate(year_pubs):
-                details += _get_pub_str(
-                    pub, '', gidx, includeImage=include_image) + sep
+                details += _get_pub_str(pub, "", gidx, includeImage=include_image) + sep
                 gidx += 1
 
             if print_year and year > 2015:
-                details += '</table>\n'
+                details += "</table>\n"
 
         if not print_year:
-            details += '</table>\n'
+            details += "</table>\n"
 
     else:
         details = '<table class="table table-hover">'
         for i, pub in enumerate(pubs):
-            details += _get_pub_str(pub, '', i + 1, includeImage=include_image) + sep
-        details += '</table>'
-    contents['details'] = details
-    contents['file'] = config['file']
+            details += _get_pub_str(pub, "", i + 1, includeImage=include_image) + sep
+        details += "</table>"
+    contents["details"] = details
+    contents["file"] = config["file"]
 
     return contents
 
@@ -327,7 +356,7 @@ def get_pub_latex(context, config):
             new_auth = author.split(", ")
             assert len(new_auth) == 2
             new_auth = new_auth[1] + " " + new_auth[0]
-            author_urls = config['author_urls']
+            author_urls = config["author_urls"]
 
             k = list(filter(lambda k: k in new_auth, author_urls.keys()))
             if len(k) > 0:
@@ -335,18 +364,17 @@ def get_pub_latex(context, config):
                 url = author_urls[k[0]]
                 new_auth = f"\href{{{url}}}{{{new_auth}}}"
 
-            if config['name'] in new_auth:
+            if config["name"] in new_auth:
                 new_auth = r"\textbf{" + new_auth + r"}"
-            new_auth = new_auth.replace('. ', '.~')
-            new_auth = '\mbox{' + new_auth + '}'
+            new_auth = new_auth.replace(". ", ".~")
+            new_auth = "\mbox{" + new_auth + "}"
             formatted_authors.append(new_auth)
         return formatted_authors
 
-
     def _get_pub_str(pub, prefix, gidx):
-        author_str = _get_author_str(pub['author'])
+        author_str = _get_author_str(pub["author"])
         # prefix = category['prefix']
-        title = pub['title']
+        title = pub["title"]
         # if title[-1] not in ("?", ".", "!"):
         #    title += ","
         # title = '"{}"'.format(title)
@@ -354,118 +382,116 @@ def get_pub_latex(context, config):
         #     title = "<a href=\'{}\'>{}</a>".format(
         #         pub['link'], title)
         title = title.replace("\n", " ")
-        if 'link' in pub:
-            title = r"\href{{{}}}{{{}}} ".format(pub['link'], title)
+        if "link" in pub:
+            title = r"\href{{{}}}{{{}}} ".format(pub["link"], title)
 
-        assert('_venue' in pub and 'year' in pub)
-        yearVenue = "{} {}".format(pub['_venue'], pub['year'])
+        assert "_venue" in pub and "year" in pub
+        yearVenue = "{} {}".format(pub["_venue"], pub["year"])
 
         links = []
-        for base in ['code', 'slides', 'talk']:
-            key = base + 'url'
+        for base in ["code", "slides", "talk"]:
+            key = base + "url"
             if key in pub:
-                links.append(
-                    r"[\href{{{}}}{{{}}}] ".format(pub[key], base))
-        links = ' '.join(links)
+                links.append(r"[\href{{{}}}{{{}}}] ".format(pub[key], base))
+        links = " ".join(links)
 
-        highlight_color = '\cellcolor{tab_highlight}' if 'selected' in pub else ''
-        if '_note' in pub:
+        highlight_color = "\cellcolor{tab_highlight}" if "selected" in pub else ""
+        if "_note" in pub:
             # note_str = r'{} && \textbf{{{}}} \\'.format(
             note_str = f"({pub['_note']})"
         else:
-            note_str = ''
+            note_str = ""
 
-        return rf'''
+        return rf"""
 \begin{{minipage}}{{\textwidth}}
 \begin{{tabular}}{{R{{8mm}}p{{1mm}}L{{6.5in}}}}
 {highlight_color} {prefix}{gidx}.\hspace*{{1mm}} && \textit{{{title}}} {links} \\
 {highlight_color} && {author_str} \\
 {highlight_color} && {yearVenue} {note_str} \\
 \end{{tabular}} \\[2mm]
-\end{{minipage}}'''
+\end{{minipage}}"""
 
     def load_and_replace(bibtex_file):
-        with open(os.path.join('publications', bibtex_file), 'r') as f:
+        with open(os.path.join("publications", bibtex_file), "r") as f:
             p = BibTexParser(f.read(), bc.author).get_entry_list()
         for pub in p:
             for field in pub:
-                if field != 'link':
+                if field != "link":
                     pub[field] = context.make_replacements(pub[field])
-            pub['author'] = _format_author_list(pub['author'])
+            pub["author"] = _format_author_list(pub["author"])
         return p
 
-    sort_bib = config['sort_bib']
-    group_by_year = config['group_by_year']
+    sort_bib = config["sort_bib"]
+    group_by_year = config["group_by_year"]
 
     contents = {}
-    pubs = load_and_replace(config['file'])
+    pubs = load_and_replace(config["file"])
     sep = "\n"
 
     if sort_bib:
-        pubs = sorted(pubs, key=lambda pub: int(pub['year']), reverse=True)
+        pubs = sorted(pubs, key=lambda pub: int(pub["year"]), reverse=True)
 
     if group_by_year:
         for pub in pubs:
-            m = re.search('(\d{4})', pub['year'])
+            m = re.search("(\d{4})", pub["year"])
             assert m is not None
-            pub['year_int'] = int(m.group(1))
+            pub["year_int"] = int(m.group(1))
 
-        details = ''
+        details = ""
         gidx = 1
-        for year, year_pubs in groupby(pubs, lambda pub: pub['year_int']):
-            print_year = year >= 2015
+        for year, year_pubs in groupby(pubs, lambda pub: pub["year_int"]):
+            print_year = year >= 2100
             if print_year:
                 year_str = str(year)
                 if year == 2015:
                     year_str = "2015 and earlier"
-                details += rf'\subsection{{{year_str}}}' + '\n'
+                details += rf"\subsection{{{year_str}}}" + "\n"
 
             for i, pub in enumerate(year_pubs):
-                details += _get_pub_str(pub, '', gidx) + sep
+                details += _get_pub_str(pub, "", gidx) + sep
                 gidx += 1
 
     else:
         assert False
-    contents['details'] = details
-    contents['file'] = config['file']
+    contents["details"] = details
+    contents["file"] = config["file"]
 
     return contents
 
 
 def add_repo_data(context, config):
-    repo_htmls = shelve.open('repo_htmls.shelf')
-
+    repo_htmls = shelve.open("repo_htmls.shelf")
 
     for item in config:
-        assert 'repo_url' in item
-        assert 'year' in item
-        assert 'github' in item['repo_url']
+        assert "repo_url" in item
+        assert "year" in item
+        assert "github" in item["repo_url"]
 
-        short_name = re.search('.*github\.com/(.*)', item['repo_url'])[1]
-        if 'name' not in item:
-            item['name'] = short_name
+        short_name = re.search(".*github\.com/(.*)", item["repo_url"])[1]
+        if "name" not in item:
+            item["name"] = short_name
 
         # Scrape the repo HTML instead of using the GitHub API
         # to avoid being rate-limited (sorry), and be nice by
         # caching to disk.
         if short_name not in repo_htmls:
-            r = requests.get(item['repo_url'])
+            r = requests.get(item["repo_url"])
             repo_htmls[short_name] = r.content
-        soup = BeautifulSoup(repo_htmls[short_name], 'html.parser')
+        soup = BeautifulSoup(repo_htmls[short_name], "html.parser")
 
-        item['stars'] = soup.find(class_="js-social-count").text.strip()
+        item["stars"] = soup.find(class_="js-social-count").text.strip()
 
-        if 'desc' not in item:
-            item['desc'] = soup.find('p', class_='f4 mt-3').text.strip()
+        if "desc" not in item:
+            item["desc"] = soup.find("p", class_="f4 mt-3").text.strip()
     # import ipdb; ipdb.set_trace()
 
 
 class RenderContext(object):
-    BUILD_DIR = 'build'
-    TEMPLATES_DIR = 'templates'
-    SECTIONS_DIR = 'sections'
-    DEFAULT_SECTION = 'items'
-    BASE_FILE_NAME = 'cv'
+    BUILD_DIR = "build"
+    TEMPLATES_DIR = "templates"
+    SECTIONS_DIR = "sections"
+    DEFAULT_SECTION = "items"
+    BASE_FILE_NAME = "cv"
 
     def __init__(self, context_name, file_ending, jinja_options, replacements):
         self._context_name = context_name
@@ -475,14 +501,16 @@ class RenderContext(object):
         context_templates_dir = os.path.join(self.TEMPLATES_DIR, context_name)
 
         self._output_file = os.path.join(
-            self.BUILD_DIR, self.BASE_FILE_NAME + self._file_ending)
+            self.BUILD_DIR, self.BASE_FILE_NAME + self._file_ending
+        )
         self._base_template = self.BASE_FILE_NAME + self._file_ending
 
-        self._context_type_name = context_name + 'type'
+        self._context_type_name = context_name + "type"
 
         self._jinja_options = jinja_options.copy()
-        self._jinja_options['loader'] = FileSystemLoader(
-            searchpath=context_templates_dir)
+        self._jinja_options["loader"] = FileSystemLoader(
+            searchpath=context_templates_dir
+        )
         self._jinja_env = Environment(**self._jinja_options)
 
     def make_replacements(self, yaml_data):
@@ -490,7 +518,7 @@ class RenderContext(object):
         yaml_data = copy.copy(yaml_data)
 
         if isinstance(yaml_data, str):
-            if not yaml_data.startswith('http'):
+            if not yaml_data.startswith("http"):
                 for o, r in self._replacements:
                     yaml_data = re.sub(o, r, yaml_data)
         elif isinstance(yaml_data, dict):
@@ -503,7 +531,7 @@ class RenderContext(object):
         return yaml_data
 
     def _render_template(self, template_name, yaml_data):
-        template_name = template_name.replace(os.path.sep, '/')  # Fixes #11.
+        template_name = template_name.replace(os.path.sep, "/")  # Fixes #11.
         return self._jinja_env.get_template(template_name).render(yaml_data)
 
     @staticmethod
@@ -512,9 +540,9 @@ class RenderContext(object):
         items_temp = list(items)
         while len(items_temp):
             group = {}
-            group['first'] = items_temp.pop(0)
+            group["first"] = items_temp.pop(0)
             if len(items_temp):
-                group['second'] = items_temp.pop(0)
+                group["second"] = items_temp.pop(0)
             groups.append(group)
         return groups
 
@@ -522,128 +550,146 @@ class RenderContext(object):
         # Make the replacements first on the yaml_data
         yaml_data = self.make_replacements(yaml_data)
 
-        body = ''
-        for section_tag, section_title in yaml_data['order']:
+        body = ""
+        for section_tag, section_title in yaml_data["order"]:
             print("Processing section: {}".format(section_tag))
 
-            section_data = {'name': section_title}
-            section_content = None if section_tag == "NEWPAGE" else yaml_data[section_tag]
-            if section_tag == 'about':
+            section_data = {"name": section_title}
+            section_content = (
+                None if section_tag == "NEWPAGE" else yaml_data[section_tag]
+            )
+            if section_tag == "about":
                 # if self._file_ending == '.tex':
                 #     continue
                 section_template_name = "section" + self._file_ending
-                section_data['data'] = section_content
-            elif section_tag == 'news':
-                if self._file_ending == '.tex':
+                section_data["data"] = section_content
+            elif section_tag == "news":
+                if self._file_ending == ".tex":
                     continue
-                section_template_name = os.path.join(self.SECTIONS_DIR, 'news.md')
-                section_data['items'] = section_content
-            elif section_tag == 'repos':
+                section_template_name = os.path.join(self.SECTIONS_DIR, "news.md")
+                section_data["items"] = section_content
+            elif section_tag == "repos":
                 add_repo_data(self, section_content)
-                section_data['items'] = section_content
+                section_data["items"] = section_content
                 section_template_name = os.path.join(
-                    self.SECTIONS_DIR, section_tag + self._file_ending)
-            elif section_tag == 'artifacts':
+                    self.SECTIONS_DIR, section_tag + self._file_ending
+                )
+            elif section_tag == "artifacts":
                 add_hf_data(self, section_content)
-                section_data['items'] = section_content
+                section_data["items"] = section_content
                 section_template_name = os.path.join(
-                    self.SECTIONS_DIR, section_tag + self._file_ending)
-            elif section_tag in ['positions']:
-                if self._context_name == 'markdown':
+                    self.SECTIONS_DIR, section_tag + self._file_ending
+                )
+            elif section_tag in ["positions"]:
+                if self._context_name == "markdown":
                     continue
-                section_data['items'] = section_content
+                section_data["items"] = section_content
                 section_template_name = os.path.join(
-                    self.SECTIONS_DIR, 'industry' + self._file_ending)
-            elif section_tag in ['coursework', 'education', 'honors',
-                                 'industry', 'research', 'skills', 'service', 'policy', 'reviewing',
-                                 'teaching', 'talks', 'advising', 'extracur']:
-                section_data['items'] = section_content
+                    self.SECTIONS_DIR, "industry" + self._file_ending
+                )
+            elif section_tag in [
+                "coursework",
+                "education",
+                "honors",
+                "industry",
+                "research",
+                "skills",
+                "service",
+                "policy",
+                "reviewing",
+                "teaching",
+                "talks",
+                "advising",
+                "extracur",
+            ]:
+                section_data["items"] = section_content
                 section_template_name = os.path.join(
-                    self.SECTIONS_DIR, section_tag + self._file_ending)
-            elif 'publications' in section_tag:
+                    self.SECTIONS_DIR, section_tag + self._file_ending
+                )
+            elif "publications" in section_tag:
                 if self._file_ending == ".tex":
                     # section_data['content'] = section_content
-                    section_data['content'] = get_pub_latex(self, section_content)
+                    section_data["content"] = get_pub_latex(self, section_content)
                 elif self._file_ending == ".md":
-                    section_data['content'] = get_pub_md(self, section_content)
-                section_data['scholar_id'] = yaml_data['social']['google_scholar']
-                section_data['semantic_id'] = yaml_data['social']['semantic_scholar']
-                section_data['scholar_stats'] = get_scholar_stats(yaml_data['social']['google_scholar'])
+                    section_data["content"] = get_pub_md(self, section_content)
+                section_data["scholar_id"] = yaml_data["social"]["google_scholar"]
+                section_data["semantic_id"] = yaml_data["social"]["semantic_scholar"]
+                section_data["scholar_stats"] = get_scholar_stats(
+                    yaml_data["social"]["google_scholar"]
+                )
                 section_template_name = os.path.join(
-                    self.SECTIONS_DIR, section_tag + self._file_ending)
-            elif section_tag == 'NEWPAGE':
+                    self.SECTIONS_DIR, section_tag + self._file_ending
+                )
+            elif section_tag == "NEWPAGE":
                 pass
             else:
                 print("Error: Unrecognized section tag: {}".format(section_tag))
                 # sys.exit(-1) TODO
                 continue
 
-            if section_tag == 'NEWPAGE':
+            if section_tag == "NEWPAGE":
                 if self._file_ending == ".tex":
                     body += "\n\n\\newpage\n"
                 elif self._file_ending == ".md":
                     pass
             else:
                 rendered_section = self._render_template(
-                    section_template_name, section_data)
-                body += rendered_section.rstrip() + '\n\n\n'
+                    section_template_name, section_data
+                )
+                body += rendered_section.rstrip() + "\n\n\n"
 
-        yaml_data['body'] = body
-        yaml_data['today'] = date.today().strftime("%B %d, %Y")
-        return self._render_template(
-            self._base_template, yaml_data).rstrip() + '\n'
+        yaml_data["body"] = body
+        yaml_data["today"] = date.today().strftime("%B %d, %Y")
+        return self._render_template(self._base_template, yaml_data).rstrip() + "\n"
 
     def write_to_outfile(self, output_data):
-        with open(self._output_file, 'wb') as out:
-            output_data = output_data.encode('utf-8')
+        with open(self._output_file, "wb") as out:
+            output_data = output_data.encode("utf-8")
             out.write(output_data)
 
 
 LATEX_CONTEXT = RenderContext(
-    'latex',
-    '.tex',
+    "latex",
+    ".tex",
     dict(
-        block_start_string='~<',
-        block_end_string='>~',
-        variable_start_string='<<',
-        variable_end_string='>>',
-        comment_start_string='<#',
-        comment_end_string='#>',
+        block_start_string="~<",
+        block_end_string=">~",
+        variable_start_string="<<",
+        variable_end_string=">>",
+        comment_start_string="<#",
+        comment_end_string="#>",
         trim_blocks=True,
-        lstrip_blocks=True
+        lstrip_blocks=True,
     ),
-    []
+    [],
 )
 
 MARKDOWN_CONTEXT = RenderContext(
-    'markdown',
-    '.md',
-    dict(
-        trim_blocks=True,
-        lstrip_blocks=True
-    ),
+    "markdown",
+    ".md",
+    dict(trim_blocks=True, lstrip_blocks=True),
     [
-        (r'\\\\\[[^\]]*]', '\n'),  # newlines
+        (r"\\\\\[[^\]]*]", "\n"),  # newlines
         # (r'~', ' '),  # spaces
-        (r'\.~', '. '),  # spaces
-        (r'\\ ', ' '),  # spaces
-        (r'\\&', '&'),  # unescape &
-        (r'\\\$', '\$'),  # unescape $
-        (r'\\%', '%'),  # unescape %
-        (r'\\textbf{(.*)}', r'**\1**'),  # bold text
-        (r'\{ *\\bf *(.*)\}', r'**\1**'),
-        (r'\\textit{(.*)}', r'*\1*'),  # italic text
-        (r'\{ *\\it *(.*)\}', r'*\1*'),
-        (r'\\LaTeX', 'LaTeX'),  # \LaTeX to boring old LaTeX
-        (r'\\TeX', 'TeX'),  # \TeX to boring old TeX
-        ('---', '-'),  # em dash
-        ('--', '-'),  # en dash
-        (r'``([^\']*)\'\'', r'"\1"'),  # quotes
-        (r'\\url{([^}]*)}', r'[\1](\1)'),  # urls
+        (r"\.~", ". "),  # spaces
+        (r"\\ ", " "),  # spaces
+        (r"\\&", "&"),  # unescape &
+        (r"\\\$", "\$"),  # unescape $
+        (r"\\%", "%"),  # unescape %
+        (r"\\textbf{(.*)}", r"**\1**"),  # bold text
+        (r"\{ *\\bf *(.*)\}", r"**\1**"),
+        (r"\\textit{(.*)}", r"*\1*"),  # italic text
+        (r"\{ *\\it *(.*)\}", r"*\1*"),
+        (r"\\LaTeX", "LaTeX"),  # \LaTeX to boring old LaTeX
+        (r"\\TeX", "TeX"),  # \TeX to boring old TeX
+        ("---", "-"),  # em dash
+        ("--", "-"),  # en dash
+        (r"``([^\']*)\'\'", r'"\1"'),  # quotes
+        (r"\\url{([^}]*)}", r"[\1](\1)"),  # urls
         # (r'\\href{([^}]*)}{([^}]*)}', r'[\2](\1)'),  # urls
-        (r'\\href{([^}]*)}{([^}]*)}', r'<a href="\1" target="_blank">\2</a>'),  # urls
-        (r'\{([^}]*)\}', r'\1'),  # Brackets.
-    ]
+        (r"\\href{([^}]*)}{([^}]*)}", r'<a href="\1" target="_blank">\2</a>'),  # urls
+        (r"\{([^}]*)\}", r"\1"),  # Brackets.
+    ],
 )
 
 
@@ -657,25 +703,41 @@ def process_resume(context, yaml_data, preview):
 
 def main():
     # Parse the command line arguments
-    parser = argparse.ArgumentParser(description='Generates HTML, LaTeX, and Markdown resumes from data in YAML files.')
-    parser.add_argument('yamls', metavar='YAML_FILE', nargs='+',
-                        help='The YAML files that contain the resume/cv'
-                        'details, in order of increasing precedence')
-    parser.add_argument('-p', '--preview', action='store_true',
-                        help='prints generated content to stdout instead of writing to file')
+    parser = argparse.ArgumentParser(
+        description="Generates HTML, LaTeX, and Markdown resumes from data in YAML files."
+    )
+    parser.add_argument(
+        "yamls",
+        metavar="YAML_FILE",
+        nargs="+",
+        help="The YAML files that contain the resume/cv"
+        "details, in order of increasing precedence",
+    )
+    parser.add_argument(
+        "-p",
+        "--preview",
+        action="store_true",
+        help="prints generated content to stdout instead of writing to file",
+    )
     group = parser.add_mutually_exclusive_group()
-    group.add_argument('-l', '--latex', action='store_true',
-                       help='only generate LaTeX resume/cv')
-    group.add_argument('-m', '--markdown', action='store_true',
-                       help='only generate Markdown resume/cv')
+    group.add_argument(
+        "-l", "--latex", action="store_true", help="only generate LaTeX resume/cv"
+    )
+    group.add_argument(
+        "-m", "--markdown", action="store_true", help="only generate Markdown resume/cv"
+    )
     args = parser.parse_args()
 
     yaml_data = {}
     for yaml_file in args.yamls:
         with open("cv.yaml") as f:
-            yaml_data.update(yaml.safe_load(f))          # safest
+            yaml_data.update(yaml.safe_load(f))  # safest
             #            or yaml.load(f, Loader=yaml.FullLoader)  # if you need full features
-
+        # merge in private fields if secrets.yaml exists
+        if os.path.exists("secrets.yaml"):
+            with open("secrets.yaml") as sf:
+                secrets = yaml.safe_load(sf)
+            yaml_data.update({k: v for k, v in secrets.items() if v})
     if args.latex or args.markdown:
         if args.latex:
             process_resume(LATEX_CONTEXT, yaml_data, args.preview)

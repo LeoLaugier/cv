@@ -4,17 +4,19 @@
   % \begin{itemize}
     ~< for item in items >~
       ~< if item.title >~
-      \textbf{<< item.title >>}, << item.place >>,
+      \textbf{<< item.place >>}, << item.location >> << item.title >> 
       ~< else >~
-      \textbf{<< item.place>>},
+      \textbf{<< item.place>>}, << item.location >>
       ~< endif >~
-      << item.location >>
+      \hfill << item.dates >> \par
         ~< if item.details >~
         ~< for detail in item.details ->~
-            <<detail>>
-        ~<- endfor ->~
+            \hangindent=1.5em
+            \textbullet\; <<detail>> \par
+        ~< endfor >~
         ~< endif >~
-        \hfill << item.dates >> \par
+    \vspace{3mm}
     ~< endfor >~
   % \end{itemize}
+\vspace{-3mm}
 ~< endblock body >~

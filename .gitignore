@@ -11,3 +11,4 @@ auto
 repo_htmls.shelf
 .vscode*
 .idea*
+secrets.yaml

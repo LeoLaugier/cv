@@ -1,19 +1,17 @@
 name:
-  first: Nathan
-  last: Lambert
-# phone: ~(540)~947~1238
-email: nathan@natolambert.com
+  first: Leo
+  last: Laugier
+#phone: +33 0 12 34 56 78 # from secrets.yaml
+#email: your.email@address.com" # from secrets.yaml
 pdf: /data/cv.pdf
 src: https://github.com/natolambert/cv
-url: "natolambert.com"
+url: "leolaugier.github.io/"
 social:
-  github: natolambert
-  twitter: natolambert
-  linkedin: natolambert
-  google_scholar: O4jW7BsAAAAJ
-  semantic_scholar: 2052363815
-# TBD what is my Erdős  number .
-# (Nathan Lambert -> ?  -> Paul Erdős )
+  github: LeoLaugier
+  linkedin: leolaugier
+  google_scholar: b7SjqRwAAAAJ
+  orcid: 0000-0002-3737-3092
+  semantic_scholar: 51921740
 
 # LaTeX formatting.
 style: banking # casual, classic, oldstyle, or banking
@@ -27,540 +25,149 @@ order:
   - [about, None]
   # - [news, News]
   - [education, Education]
-  - [industry, Industry Experience]
+  - [industry, Professional Experience]
   - [honors, Honors \& Awards]
   - [all_publications, Publications]
-  - [repos, Repositories]
-  - [artifacts, Machine Learning Artifacts]
+  # - [repos, Repositories]
   # - [NEWPAGE, NEWPAGE]
-  - [talks, Invited Talks]
-  - [advising, Mentorship]
+  # - [talks, Invited Talks]
+  - [advising, Former Master Students]
   - [reviewing, Peer Review]
-  - [service, Professional Activities]
-  - [policy, Policy Engagement]
-  - [teaching, Teaching]
-  - [extracur, Extracurriculars]
+  # - [service, Professional Activities]
+  # - [policy, Policy Engagement]
+  # - [teaching, Teaching]
+  - [extracur, Activities]
+  - [skills, Skills]
 
 about: '\vspace{18pt} \small{
-  I research \textbf{data-driven decision making},
-  including progressing \textbf{reinforcement learning} algorithms,
-  applying them to real-world problems such as \textbf{large language models} and \textbf{robotics}, and planning for the \textbf{societal implications} therein.}'
+  I research the capabilities of \textbf{Large Language Models} to address issues emerging from \textbf{online discussions},
+  including NLP-based \textbf{toxicity mitigation}, \textbf{social media simulation} with LLM agents, and \textbf{argument mining} from \textbf{Reddit}.
+  My foundational NLP experience (during my PhD) includes self-supervised text-to-text transformers for NLG. 
+  More generally, I am interested in applications of \textbf{ML} and I am always curious in learning new topics in computer science and engineering.'
 
 reviewing:
-  - details: Association for Computational Linguistics (ACL) ARR
-    year: 2025 (1)
-  - details: Empirical Methods in Natural Language Processing, Demo Track
-    year: 2024
-  - details: Transactions on Machine Learning Research (TMLR)
-    year: 2024
-  - details: Conference on Machine Learning (ICML)
-    year: 2020, 2022 (3), 2023, 2024 (3)
-    sub_details: "(count is 1 unless labelled)"
-  - details: Conference on Neural Information Processing Systems (NeurIPs)
-    year: 2022 (2), 2023, 2024, 2025 (3)
-  - details: Conference on Learning Representations (ICLR)
-    year: 2021* (3), 2022 (3)
-    sub_details: "(*Outstanding Reviewer)"
-  - details: Conference on Robot Learning (CORL)
-    year: 2020
-  - details: Conference on Robotics and Automation (ICRA)
-    year: 2020, 2021, 2022 (2)
-  - details: Conference on Intelligent Robots and Systems (IROS)
-    year: 2021, 2022 (2)
-  - details: Robotics - Science and Systems (RSS)
-    year: 2022
-  - details: Conference on Decision and Control (CDC)
-    year: 2021
-  - details: Robotics and Automation Letters (RA-L)
-    year: 2019, 2020, 2022
-  - details: Transactions on Cybernetics
-    year: 2019, 2020
-
-policy:
-  - details: Partnership on AI Partner Forum, Panel on AI Agents
-    year: 2024
-    url: https://www.youtube.com/watch?v=zBErCTDDvpI&list=PLDOvLcRogwze1zQ66ia5S-tmFTwy6UWOa&index=8
-  - details: Columbia Convening on Openness and AI
-    year: 2024
-    url: https://blog.mozilla.org/en/mozilla/ai/introducing-columbia-convening-openness-and-ai/
-  - details: NAIRR Panel at AI Expo for National Competitiveness
-    year: 2024
-  - details: IAS AI Policy and Governance Working Group
-    year: 2024
-    url: https://www.ias.edu/stsv-lab/aipolicy
-
-service:
-  - details: Area Chair (AC), Conference on Language Modeling (COLM)
+  - details: The 29th Conference on Computational Natural Language Learning (CoNLL)
     year: 2025
-  - details: Associate Editor (AE), Conference on Intelligent Robots and Systems (IROS)
+  - details: The 2024 International World Wide Web Conference (WWW)
+    year: 2024
+  - details: The 10th IEEE International Conference on Collaboration and Internet Computing (CIC)
+    year: 2024
+  - details: The 2024 IEEE International Conference on Big Data (BigData)
+    year: 2023, 2024
+  - details: The 16th ACM International Conference on Web Search and Data Mining (WSDM)
     year: 2023
-  - details: Farama Foundation Board of Technical Advisors
-    year: 2022 -- 2024
-    url: https://farama.org/
-  - details: NeurIPs Workshop on Robot Learning Organizer
-    year: 2021, 2022
-    url: http://robot-learning.ml
-  - details: Member of Well-Being in Machine Learning
-    year: 2021 -- 2024
-    url: https://twitter.com/WellBeingInML
-  - details: RLDM Workshop on Building Accountable and Transparent RL Organizer
-    year: 2022
-    url: https://rewardreports.github.io/workshop.html
-  - details: Berkeley AI Research Audio \& Video Team
-    year: 2021 -- 2022
-  - details: Machine Learning Collective Office Hours
-    year: 2021 -- cont.
-    url: https://mlcollective.org/services/
-  - details: Tapia Panel on Student Mental Health Organizor
+  - details: The 27th Conference on Computational Natural Language Learning (CoNLL)
+    year: 2023
+  - details: The 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP)
+    year: 2022, 2023
+  - details: The 15th International Workshop on Semantic Evaluation (SemEval)
     year: 2021
-    url: https://tapiaconference.cmd-it.org/attend/presentation/?id=acad115&sess=sess251
-  - details: Founder of UC Berkeley EECS Equal Access to Application Assistance (EAAA) Program
-    url: https://sites.google.com/berkeley.edu/eaaa/home
-    year: 2020 -- 2022
-  - details: Wellness Coordinator for UC Berkeley Electrical Engineering Graduate Student Assembly (EEGSA)
-    year: 2020 -- 2022
-  - details: Bay Area Teachers in Schools
-    year: 2017
-
-repos:
-  - repo_url: https://github.com/natolambert/rlhf-book
-    year: 2025
-    desc: Book on RLHF
-  - repo_url: https://github.com/allenai/awesome-open-source-lms
-    year: 2024
-    desc: A curated list of open-source language models
-  - repo_url: https://github.com/allenai/reward-bench
-    year: 2024
-    desc: The first evaluation tool for reward models
-  - repo_url: https://github.com/allenai/open-instruct
-    year: 2023
-    desc: Post-training language models
-  - repo_url: https://github.com/natolambert/blogcaster
-    year: 2023
-    desc: AI tools for multimodal blogging
-  - repo_url: https://github.com/huggingface/alignment-handbook
-    year: 2023
-    desc: RLHF model lessons and recipes
-  - repo_url: https://github.com/huggingface/trl
-    year: 2023
-    desc: Lean library for RLHF
-  - repo_url: https://github.com/huggingface/simulate
-    year: 2022
-    desc: Tool for building embodied AI environments
-  - repo_url: https://github.com/huggingface/diffusers
-    year: 2022
-    desc: Diffusion models library
-  - repo_url: https://github.com/facebookresearch/mbrl-lib
-    year: 2021
-    desc: Model-based reinforcement learning library
-  - repo_url: https://github.com/natolambert/dynamicslearn
-    year: 2020
-    desc: Model-based RL for mixed sim. and real
-
-artifacts:
-  - id: allenai/OLMo-2-1124-13B-Instruct
-    year: 2024
-    type: M
-    desc: Round 2!
-  - id: allenai/Llama-3.1-Tulu-3-8B
-    year: 2024
-    type: M
-    desc: Our SOTA post-training on Llama 3.1
-  - id: allenai/tulu-3-sft-mixture
-    year: 2024
-    type: D
-    desc: Our new SFT dataset
-  - id: allenai/OLMoE-1B-7B-0924-Instruct
-    year: 2024
-    type: M
-    desc: Open-source MoE model
-  - id: allenai/tulu-2.5-preference-data
-    year: 2024
-    type: D
-    desc: Collection of preference datasets
-  - id: allenai/reward-bench
-    year: 2024
-    type: S
-    desc: Benchmark for reward modeling
-  - id: allenai/OLMo-7B-Instruct
-    year: 2024
-    type: M
-    desc: A truly open-source chat model
-  - id: allenai/OLMo-7B
-    year: 2024
-    type: M
-    desc: Our first open-source language model
-  - id: allenai/tulu-2-dpo-70b
-    year: 2023
-    type: M
-    desc: First model scaling DPO
-  - id: HuggingFaceH4/zephyr-7b-beta
-    year: 2023
-    type: M
-    desc: Small and powerful chat model v2
-  - id: HuggingFaceH4/zephyr-7b-alpha
-    year: 2023
-    type: M
-    desc: Small and powerful chat model
-  - id: HuggingFaceH4/starchat-playground
-    year: 2023
-    type: S
-    desc: Playground for coding assistant models
-  - id: HuggingFaceH4/starchat-alpha
-    year: 2023
-    type: M
-    desc: Coding assistant language model
-  - id: HuggingFaceH4/open_llm_leaderboard
-    year: 2023
-    type: S
-    desc: Leaderboard for open instruction-tuned LLMs
-  - id: HuggingFaceH4/stack-exchange-preferences
-    year: 2023
-    type: D
-    desc: Preference dataset for RLHF
 
 education:
-  - school: University of California, Berkeley
-    location: Berkeley, CA
-    degree: Ph.D. in Electrical Engineering and Computer Science
-    dates: 2017 -- 2022
+  - school: Polytechnic Institute of Paris
+    location: Paris, France
+    degree: Ph.D. in Computer Science and Mathematics
+    dates: 2022 # 2019 -- 2022
     # dates: May 2019
-    overallGPA: 4.0/4.0
+    # overallGPA: 4.0/4.0
     details:
-      - "\\textit{\\href{https://www2.eecs.berkeley.edu/Pubs/TechRpts/2022/EECS-2022-65.html}{Synergy of Prediction and Control in Model-based Reinforcement Learning}}"
-      - "Advisors: \\href{http://www.eecs.berkeley.edu/~pister/}{Kristofer S.J. Pister},  \\href{https://www.robertocalandra.com/about/}{Roberto Calandra}"
-      - "Committee: \\href{https://people.eecs.berkeley.edu/~svlevine/}{Sergey Levine},  \\href{https://people.eecs.berkeley.edu/~tomlin/}{Claire Tomlin}"
+      - "\\textit{\\href{https://theses.hal.science/tel-03884481}{Analysis and Control of Online Interactions through Neural Natural Language Processing}}"
+      - "Advisors: \\href{https://perso.telecom-paristech.fr/bonald/Home_page.html}{Thomas Bonald},  \\href{https://research.google/people/lucasdixon/}{Lucas Dixon}"
+      - "Committee: \\href{http://alpage.inria.fr/~sagot/}{Benoît Sagot}, \\href{https://webusers.i3s.unice.fr/~villata/Home.html}{Serena Villata}, \\href{https://fyvo.github.io/}{François Yvon}, \\href{https://www2.aueb.gr/users/ion/}{Ion Androutsopoulos}, \\href{https://www.cs.umd.edu/~marine/}{Marine Carpuat}, \\href{https://www.petrovi.de/}{Slav Petrov}"
 
-
-  - school: Cornell University
-    location: Ithaca, NY
-    degree: B.S. in Electrical and Computer Engineering
-    dates: 2013 -- 2017
+  - school: University of California, Berkeley
+    location: Berkeley, California
+    degree: M.Eng. in Computer Science
+    dates: 2018 # 2013 -- 2017
+    details:
+    - "Data Science \\& Systems (Machine Learning, Deep Learning)"
     # dates: May 2014
-    overallGPA: 4.0/4.0
+    # overallGPA: 4.0/4.0
+
+  - school: CentraleSupélec (Paris-Saclay University)
+    location: Gif-sur-Yvette, France
+    degree: B.Sc. \& M.Sc. in Electrical Engineering and Computer Science
+    dates: 2017 # 2013 -- 2017
 
 industry:
-  - place: Allen Institute for AI
-    location: Seattle, WA |
-#    title: Research Intern
-    dates: 2023 -- cont.
+  - place: Swiss Federal Institute of Technology Lausanne (EPFL)
+    location: Switzerland |
+    title: Postdoctoral Researcher
+    dates: 2023 -- 2025
     # dates: June 2018 -- Sept 2018
     details:
-      - "Research Scientist"
-  - place: HuggingFace
-    location: Remote |
-#    title: Research Intern
-    dates: 2022 -- 2023
+      - "Developed novel methods in the Distributed Information Systems Laboratory (Prof. Karl Aberer) to transform unstructured online news and social media data into structured, actionable insights."
+      - "Designed SAGESSE, a System for Argument Generation, Extraction and Structuring of Social Exchanges that leverages the capabilities of open-weight LLMs (Mistral 7B and Microsoft Phi-3 14B) to organize complex online arguments."
+      - "Fine-tuned OLMo-2 32B (AllenNLP's LLM) with LoRa/QLoRa on Reddit conversations, enabling simulation of online discussions through LLM-based agents conditioned with socio-demographic profiles inferred from real user histories."
+      - "Supervised 6 Master’s students as primary advisor and 15 as secondary supervisor, providing mentorship, guidance, and evaluation on research projects."
+  - place: Polytechnic Institute of Paris (IP Paris)
+    location: France |
+    title: Ph.D. Student
+    dates: 2019 -- 2022
     # dates: June 2018 -- Sept 2018
     details:
-      - "Research Scientist and RLHF Team Lead"
-  - place: DeepMind
-    location: London (\textit{Virtual}) |
-#    title: Research Intern
-    dates: 2021
+      - "Conducted research with the Data, Intelligence and Graphs team (Prof. Thomas Bonald) on leveraging pretrained deep learning models for Natural Language Processing (NLP) to improve the quality of online interactions."
+      - "Implemented CAE-T5, a Conditional Auto-Encoder fine-tuning Google’s T5-3B model in a self-supervised setup, enabling rephrasing of negative reviews into positive ones and, for the first time, transforming aggressive comments into polite versions."
+      - "Developed a recommender system grounded in textual online reviews, focusing on explainability of user tastes. The method represents user preferences as a graph of textual snippets, with edges defined by semantic similarity models."
+      - "Completed graduate coursework at École Normale Supérieure Paris-Saclay, including Reinforcement Learning and Algorithms for Speech and Natural Language Processing."
+  - place: Agency for Science, Technology and Research (A*STAR)
+    location: Singapore |
+    title: Research Engineer
+    dates: 2018 -- 2019
     # dates: June 2018 -- Sept 2018
     details:
-      - "Research Intern "
-      - "(Host: \\href{https://www.riedmiller.me}{Martin Riedmiller})"
-  - place: Facebook AI
-    location: Menlo Park |
-#     title: Research Intern & Student Researcher
-    dates: 2019 -- 2020
-    # dates: May 2017 -- Oct 2017
-    details:
-      - "Research Intern and Student Researcher "
-      - "(Host: \\href{https://www.robertocalandra.com/about/}{Roberto Calandra})"
-  - place: Tesla
-    location: Palo Alto
-    # title: Data Scientist Intern
-    dates: 2015
-    details:
-      - "Test Engineering Intern"
-
-teaching:
-  - semester: Sp2025
-    name: Advances and Challenges in Language Models, Reasoning, and AI Agents
-    short: U.W. CSE599H
-    position: Guest Lecture, An introduction to post-training
-    details: "(\\href{https://docs.google.com/presentation/d/1RJLyfUz7_IbudBxoLZ5YHafzJbvlcZJdKmRWBtstZnQ/edit}{slides}, \\href{https://rulinshao.github.io/cse599/}{course})"
-  - semester: Sp2024
-    name: NLP with Deep Learning
-    short: Stanford University CS224N
-    position: Guest Lecture, Life after DPO
-    details: "(\\href{https://docs.google.com/presentation/d/1on5xTePaUYg47vui3dUr0Lp6GUXmOXmhceNJLXRbGsE/edit?usp=sharing}{slides}, \\href{https://web.stanford.edu/class/cs224n/}{course}, \\href{https://www.youtube.com/watch?v=dnF463_Ar9I}{recording})"
-  - semester: Sp2024
-    name: Transformers United
-    short: Stanford University CS25N
-    position: Guest Lecture, hi story of open alignment
-    details: "(\\href{https://docs.google.com/presentation/d/1quMyI4BAx4rvcDfk8jjv063bmHg4RxZd9mhQloXpMn0/edit?usp=sharing}{slides}, \\href{https://www.youtube.com/watch?v=AdLgPmcrXwQ}{recording})"
-  - semester: Sp2024
-    name: Policy Challenges of AI
-    short: Harvard University
-    position: Guest lecture on open-source AI
-    details: "(\\href{https://docs.google.com/presentation/d/1VI6u104kGFsZRh-CHheUsS2BA7J9ZpUSdyr1lBPaoA8/edit?usp=sharing}{slides}, \\href{https://hls.harvard.edu/courses/case-studies-in-public-and-private-policy-challenges-of-artificial-intelligence/}{course})"
-  - semester: Fa2023
-    name: Machine Learning from Human Preferences
-    short: Stanford University CS329H
-    position: Guest lecture on RLHF
-    details: "(\\href{https://docs.google.com/presentation/d/1T6X8ZlwrBek14wGfKljLxikwkTBDdM88r0AZ6NiodU4/edit?usp=sharing}{slides}, \\href{https://web.stanford.edu/class/cs329h/}{course})"
-  - semester: Fa2023
-    name: AI History
-    short: Seoul National University, School of Law
-    position: Guest lecture on RL History
-    details: "(\\href{http://aihistoryclass.com/}{course})"
-  - semester: Win.2022
-    name: HuggingFace Deep RL Course
-    short: RLHF, from 0 to ChatGPT
-    position: Online (>160k views)
-    details: "(\\href{https://www.youtube.com/watch?v=2MBJOuVq380}{watch})"
-  - semester: Su2020, Fa2020
-    name: Introduction to Artificial Intelligence
-    short: UCB CS188
-    position: TA
-  - semester: Sp2020
-    name: Introduction to Artificial Intelligence
-    short: UCB CS188
-    position: Instructor
-    details: lectured to 800+ students
-  - semester: Fa2019
-    name: Designing Information Devices and Systems II
-    short: UCB EE16B
-    position: TA
-  - semester: Sp2017
-    name: Integrated Micro Sensors and Actuators
-    short: Cornell ECE4320
-    position: Grader
-  - semester: Fa2016
-    name: Mathematics of Signal and System Analysis
-    short: Cornell ECE 3250
-    position: TA
+      - "Implemented an algorithm leveraging Graph Convolutional Neural Networks (GCNs) to integrate knowledge from ConceptNet 2.0 into sentiment analysis and question answering models."
+      - "Designed deep learning methods to predict thermoelectric properties of functional materials, demonstrating that fully connected architectures can outperform crystal-based GCNs on this task."
+  - place: IBM Montpellier
+    location: France |
+    title: Data Center Technical Intern
+    dates: 2016
+    # dates: June 2018 -- Sept 2018
+  - place: Los Alamos National Laboratory
+    location: New Mexico, USA |
+    title: Research Assistant
+    dates: 2014
+    # dates: June 2018 -- Sept 2018
 
 talks:
 - year: 2025
   month: June
   location: VentureBeat Transform
   title: Reasoning; What comes next?
-- year: 2025
-  month: June
-  location: Enterprise AI Agent Summit, Seattle WA
-  title: The art of a good (reasoning) model
-  details: "(\\href{https://docs.google.com/presentation/d/1_ByHKLt49h3Vuk9bkprD6iaBDOY40ASfSwXGD7aheEc/edit?slide=id.g367b7d3a6a1_0_294#slide=id.g367b7d3a6a1_0_294}{slides}, \\href{https://www.youtube.com/watch?v=VAzL8RHot1c&t=4s}{recording})"
-- year: 2025
-  month: June
-  location: AI Engineer World's Fair
-  title: A taxonomy for next-generation reasoning models
-  details: "(\\href{https://docs.google.com/presentation/d/1U4mKDpKnm4E7FgruUr_dD9ZGa3tZDEp7PCYYBk9Pn6A/edit?usp=sharing}{slides}, \\href{https://www.youtube.com/live/-9E9_21tx04?si=SJ3KETsRrNvPzeOM&t=11348}{recording})"
-- year: 2025
-  month: April
-  location: USC Information Sciences Institute
-  title: Experiments with Reinforcement Learning with Verifiable Rewards
-  details: "(\\href{https://docs.google.com/presentation/d/13dBH2cYoJI4hCOHX5r5razq4HHdQVRIWOOIe08PTmPM/edit?slide=id.p#slide=id.p}{slides}, \\href{https://www.youtube.com/watch?v=zYeIqzULzr0&t=2s}{recording})"
-- year: 2025
-  month: March
-  location: UC Santa Cruz, Silicon Valley Extension
-  title: The RL Era of Language Models
-  details: "(\\href{https://docs.google.com/presentation/d/1MnY-_YMhEwUdEO6oNIJcdGaEBN3goqCNUu_NLn_eYW4/edit?slide=id.p#slide=id.p}{slides}, \\href{https://www.youtube.com/watch?v=J1APR8Bo9dE}{recording})"
-- year: 2025
-  month: February
-  location: Minds and Machines Seminar, Seattle
-  title: An unexpected RL renaissance
-  details: "(\\href{https://docs.google.com/presentation/d/1z-i4NuqSc7rFKmI9zNnz3CJ_eshUBpJpbvcswCeWvPk/edit#slide=id.p}{slides}, \\href{https://www.youtube.com/watch?v=YXTYbr3hiFU}{recording})"
-- year: 2024
-  month: December
-  location: Neural Information Processing Systems
-  title: (Tutorial) Language Modeling
-  details: "(\\href{https://docs.google.com/presentation/d/179dpzWSQ9G7EAUlvaJdeE0av9PLuk9Rl33nfhHSJ4xI/edit?usp=sharing}{slides}, \\href{https://neurips.cc/virtual/2024/tutorial/99526}{recording})"
-- year: 2024
-  month: December
-  location: Infer AI Engineer Vancouver
-  url: https://infervan.com/
-  title: How to approach post-training for AI applications
-  details: "(\\href{https://docs.google.com/presentation/d/1LWHbtz74GwKSGYZKyBVUtcyvp8lgYOi5EVpMnVDXBPs}{slides}, \\href{https://www.youtube.com/watch?v=grpc-Wyy-Zg}{recording})"
-- year: 2024
-  month: December
-  location: Latent Space @ NeurIPS
-  url: https://lu.ma/LSLIVE
-  title: The state of reasoning
-  details: "(\\href{https://docs.google.com/presentation/d/1PNipMudHb5HTNnVosve0lqdrgwKSWck4SCE9TSPCJkY/edit}{slides}, \\href{https://www.youtube.com/watch?v=2pHE9L4ZZXM}{recording})"
-- year: 2024
-  month: November
-  location: Princeton AI Alignment and Safety Seminar (PASS)
-  url: https://pli.princeton.edu/events/princeton-ai-alignment-and-safety-seminar
-  title: Tülu 3 Preview
-  details: "(\\href{https://docs.google.com/presentation/d/13BMCKdugxBn75hAkPX3qHWnoRxy5XhvX228pODWxJJ8/edit?usp=sharing}{slides}, \\href{https://www.youtube.com/watch?v=ltSzUIJ9m6s&list=PLWRU-w8UhT6jNg64UfBB0VtlvI4Upe914}{recording})"
-- year: 2024
-  month: March
-  location: Deep Learning Classics and Trends
-  title: RewardBench, Evaluating Reward Models for Language Modeling
-  details: "(\\href{https://docs.google.com/presentation/d/11ykKLSnHAE-YbI8V_DTkbXYHsgItqYTTywIGyoK9D_0/edit?pli=1#slide=id.g26c4c1f906b_0_0}{slides})"
-- year: 2024
-  month: February
-  location: Anthropic Societal Impacts Team
-  title: RewardBench
-- year: 2023
-  month: December
-  location: Workshop of Social Choice for AI Ethics and Safety
-  title: History and Risks of RLHF
-- year: 2023
-  month: December
-  location: Workshop on Sociotechnical AI Safety
-  title: History and Risks of RLHF
-  details: "(\\href{https://docs.google.com/presentation/d/12YyZmOpgrsUT2dE0PRZC8u-_uPG_dTExM0TpI9mnfDE/edit?usp=sharing}{slides})"
-- year: 2023
-  month: November
-  location: CoRL LangRob Workshop
-  url: https://sites.google.com/view/langrob-corl23/home
-  title: Bridging RLHF from LLMs back to control
-  details: "(\\href{https://docs.google.com/presentation/d/15i_7iqyUJwDMtyzzzSn83JLETET4Lz2Y7e4sDCAZhfM/edit?usp=sharing}{slides},\\href{https://www.youtube.com/live/ThgGAZF4hgI?si=EUGqtGr1XqIELhIj&t=8827}{recording})"
-- year: 2023
-  month: August
-  location: Deep Learning Classics and Trends
-  url: https://mlcollective.org/dlct/
-  title: Objective Mismatch in Reinforcement Learning from Human Feedback
-  details: "(\\href{https://drive.google.com/file/d/1F1lIi48PrWl5_80wQF40Y5dQmCBiZUUh/view?usp=sharing}{Slides Available}, \\href{https://youtu.be/j6Lss2_GSrY}{Recording Available})"
-- year: 2023
-  month: July
-  location: International Conference on Machine Learning
-  title: (Tutorial) Reinforcement Learning from Human Feedback
-  details: "(\\href{https://docs.google.com/presentation/d/1JVJz-tqD5kJEYvqYSyUFpfCA8GjtObw7f7NfA5grm-4/edit?usp=sharing}{Slides Available}, \\href{https://slideslive.com/39004357/reinforcement-learning-from-human-feedback-a-tutorial-}{Recording Available})"
-- year: 2023
-  month: June
-  location: ACM Conference on Fairness, Accountability, and Transparency
-  title: (Tutorial) Steering language models with reinforcement learning from human feedback and constitutional AI
-  details: "(\\href{https://docs.google.com/presentation/d/1-SzKvrfqKpK8NbTrnlLwJL5IHohPoW-0X7G17hSVW-Y/edit?usp=sharing}{Slides Available})"
-- year: 2023
-  month: March
-  location: UCL Dark Lab
-  title: Reinforcement Learning from Human Feedback; Open and Academic Progress
-  details: "(\\href{https://www.youtube.com/watch?v=8SgKDSX-Me0}{Recording Available}, \\href{https://docs.google.com/presentation/d/1jUipk6Mu8On2mWu_qfiocmbgnNux7SWp/edit#slide=id.p1}{Slides})"
-- year: 2023
-  month: February
-  location: Microsoft Data Science Gems
-  title: Reinforcement Learning from Human Feedback; Pathways to Open Reproduction of ChatGPT
-- year: 2022
-  month: July
-  location: ICML Workshop on Responsible Decision Making in Dynamic Environments
-  details: "(\\href{https://slideslive.com/38988545/reward-reports-for-reinforcement-learning}{Recording Available}, \\href{https://docs.google.com/presentation/d/1Id6nDc6Q1kIPeB0VI0FqmJZcrwCY5p6rY-az50h2ArI/edit?usp=sharing}{Slides})"
-  url: https://responsibledecisionmaking.github.io/schedule/
-  title: Reward Reports for Reinforcement Learning
-- year: 2022
-  month: July
-  location: Lead The Future
-  title: Synthesizing Robotic Controllers with Model-based Reinforcement Learning
-- year: 2022
-  month: April
-  location: University of Pennsylvania -- Perception, Action, and Learning Group
-  details: "(\\href{https://youtu.be/HxbeQI7hfo4}{Recording Available}, \\href{https://docs.google.com/presentation/d/1oKmu4gdpt1OMhKD751ASReHu2fa_kywq/edit?usp=sharing&ouid=113700012080756993161&rtpof=true&sd=true}{Slides})"
-  title: Planning through Exploration and Exploitation in Model-based Reinforcement Learning
-- year: 2022
-  month: March
-  location: Microsoft Research
-  details: "(\\href{https://docs.google.com/presentation/d/1x8duM427_KvazHE6FVYS2cGb-HCuTmBt/edit?usp=sharing&ouid=113700012080756993161&rtpof=true&sd=true}{Slides})"
-  title: (Job Talk) Legible Reinforcement Learning via Dynamics Models
-- year: 2022
-  month: February
-  location: DeepMind Robotics All Hands
-  title: The Challenges of Exploration for Offline Reinforcement Learning
-- year: 2022
-  month: February
-  location: Amazon Robotics \& AI
-  details: "(\\href{https://docs.google.com/presentation/d/1TZOY4DaJjDJzTZjF5peFTAXP7oFZYLY_/edit?usp=sharing&ouid=113700012080756993161&rtpof=true&sd=true}{Slides})"
-  title: (Job Talk) Synergy of Prediction and Control in Model-based Reinforcement Learning
-- year: 2021
-  month: December
-  location: Cruise AI
-  title: (Job Talk) Control-oriented Predictions in Model-based Reinforcement Learning
-- year: 2021
-  month: March
-  location: Cornell Robotics Seminar
-  details: "(\\href{https://www.youtube.com/watch?v=H5Q1UAEkhZY&t=1013s}{Recording Available}, \\href{https://docs.google.com/presentation/d/1ik0SsBsUApv7f1FRhG--dslSvuIobfHs/edit?usp=sharing&ouid=113700012080756993161&rtpof=true&sd=true}{Slides})"
-  url: https://robotics.cornell.edu/category/seminars/spring-2021/
-  title: Improving Model Predictive Control in Model-based Reinforcement Learning
-- year: 2020
-  month: April
-  location: UC Berkeley Semiautonomous Seminar
-  details: "(\\href{https://youtu.be/Z4EpSWfU48E}{Recording Available}, \\href{https://docs.google.com/presentation/d/18mvQ3Evy0mUABhPKvBVGjC3BlbecLvov/edit?usp=sharing&ouid=113700012080756993161&rtpof=true&sd=true}{Slides})"
-  url: https://sites.google.com/berkeley.edu/semiautonomousseminar/spring-2020
-  title: Model Learning for Low-level Control in Robotics
-- year: 2019
-  month: May
-  location: UC Berkeley Semiautonomous Seminar
-  url: https://sites.google.com/view/cs-159-spring-2020/lectures
-
 
 advising:
-  - year: 2025
-    name: Daniel Marta
-    details: "(Thesis Committee Member)"
-    url: https://daniellsm.github.io/
   - year: 2024
-    name: Saumya Malik
-    details: "(Ai2 Pre-Doctoral Researcher `25)"
-    url: https://www.linkedin.com/in/saumya-malik-983a11229/
+    name: Lina Berrayana
+    details: "(Semester project: Automated Mediation with Large Language Models)"
+    url: https://ch.linkedin.com/in/lina-berrayana-431046257
   - year: 2024
-    name: Jacob Morrison
-    details: "(Ai2 Pre-Doctoral Researcher `25)"
-    url: https://jacobmorrison.com/
-  - year: 2020
-    name: Mark Selden
-    details: "(UC Berkeley BS `22)"
-    url: https://www.linkedin.com/in/mark-selden/
-  - year: 2019
-    name: Albert Wilcox
-    details: "(UC Berkeley BS `22, Ph.D. student at Georgia Tech)"
-    url: https://www.linkedin.com/in/albert-wilcox-314898184
-  - year: 2019
-    name: Jason Zhou
-    details: "(UC Berkeley BS, MS '21 to \\href{https://matician.com/}{Matician})"
-    url: https://www.linkedin.com/in/jasonxzhou/
-  - year: 2018
-    name: Felipe Campos
-    details: "(UC Berkeley BS '20 to \\href{https://armstrongrobotics.com/}{Armstrong Robotics})"
-    url: https://scholar.google.com/citations?hl=en&user=PNvJsN0AAAAJ&view_op=list_works&sortby=pubdate
-  - year: 2018
-    name: Howard Zhang
-    details: "(UC Berkeley BS, MS'21 to UCLA PhD)"
-    url: https://www.linkedin.com/in/howard-zhang-8366b1147
+    name: Aybars Yazıcı
+    details: "(Master’s thesis: Peace Mediator Assistant: An AI tool for analysis of political events"
+    url: https://www.aybarsyazici.com/
+  - year: 2024
+    name: Adriana Orellana
+    details: "(Intern: Peace Mediator Assistant)"
+    url: https://ch.linkedin.com/in/adriana-orellana-t
+  - year: 2024
+    name: Thibaut de Saivre
+    details: "(Intern: Deliberate-Lab and LLM Mediators)"
+    url: https://fr.linkedin.com/in/thibaut-de-saivre-73491a1a8
+  - year: 2023
+    name: Eloi Eynard
+    details: "(Semester project: Harnessing Large Language Models to De-escalate Online Polarisation)"
+    url: http://eloiey.ch/
+  - year: 2023
+    name: Yifei Song
+    details: "(Semester project: Few-shot learning with parameter-efficient tuning)"
+    url: https://fr.linkedin.com/in/yifei-song-7945a4200
 
 honors:
-  - title: CVPR Best Paper Honorable Mention (Molmo \& Pixmo)
-    year: 2025  
-  - title: Best Reasoning \& RL Talk, AI Engineer World's Fair
-    year: 2025
-  - title: Ai2 The Cat Herder
-    year: 2024
-  - title: ACL Best Resource Paper Award (Dolma)
-    year: 2024
-  - title: ACL Best Theme Paper Award (OLMo)
-    year: 2024
-  - title: GeekWire Innovation of the year (OLMo)
-    year: 2024
-  - title: Reward Reports - Auditing AI Mozilla Technology Fund Cohort
-    year: 2023
-  - title: Best Oral Presentation; Berkeley Sensor and Actuator Sensor Spring Review
-    year: 2022
-  - title: Best Student Paper Finalist; IEEE Symposium on Multi-Robot and Multi-Agent Systems
-    year: 2021
-  - title: Berkeley EECS Demetri Angelakos Memorial Achievement Award
-    year: 2021
-  - title: Heart to Humanity Eternal (H2H8) Pioneer
-    year: 2021
-  - title: NDSEG Graduate Research Fellowship Program Top 200
+  - title: Google Cloud research credits 
+    year: 2020  
+  - title: Google Doctoral Scholarship
+    year: 2019
+  - title: Golden Key International Honour Society Membership 
     year: 2018
-  - title: NSF Graduate Research Fellowship Program Honorable Mention
-    year: 2017, 2018
-  - title: Berkeley EECS Department Fellowship
-    year: 2017
-  - title: Eight undergraduate scholarships
-    descr: |
-      Cornell Rowing Charles E. Courtney Award,
-      Tau Beta Pi Scholarship,
-      Southeastern New England Defense Industry Alliance STEM Scholarship 2016, 2017,
-      Cornell Athletics 400 Club Induction,
-      Beta Pi Induction,
-      Eta Kappu Nu Induction,
-      American Society of Engineering Education SMART Scholar Award
-    year: 2013 -- 2017
 
 
 
@@ -572,99 +179,61 @@ all_publications:
   group_by_year: True
 
   author_urls:
-    'Valentina Pyatkin': 'https://valentinapy.github.io/'
-    'Jacob Morrison': 'https://jacobmorrison.com/'
-    'Shengyi Huang': 'https://costa.sh/'
-    'Hamish Ivison': 'https://ivison.id.au/'
-    'Faeze Brahman': 'https://fabrahman.github.io/'
-    'Lester James V. Miranda': 'https://ljvmiranda921.github.io/'
-    'Alisa Liu': 'https://alisawuffles.github.io/'
-    'Nouha Dziri': 'https://nouhadziri.github.io/'
-    'Shane Lyu': 'https://alrope123.github.io/'
-    'Yuling Gu': 'https://yulinggu-cs.github.io/'
-    # 'Saumya Malik': ''
-    # 'Victoria Graf': ''
-    'Jena D. Hwang': 'https://jenahwang.github.io/'
-    # 'Jiangjiang Yang': ''
-    'Ronan Le Bras': 'https://rlebras.github.io/'
-    # 'Oyvind Tafjord': ''
-    # 'Chris Wilhelm': ''
-    'Luca Soldaini': 'https://soldaini.net/'
-    'Noah A. Smith': 'https://nasmith.github.io/'
-    'Noah A Smith': 'https://nasmith.github.io/'
-    'Noah Smith': 'https://nasmith.github.io/'
-    'Yizhong Wang': 'https://homes.cs.washington.edu/~yizhongw/'
-    'Pradeep Dasigi': 'https://pdasigi.github.io/'
-    'Hannaneh Hajishirzi': 'https://homes.cs.washington.edu/~hannaneh/'
-    'Hanna Hajishirzi': 'https://homes.cs.washington.edu/~hannaneh/'
-    'Matt Deitke': 'https://mattdeitke.com/'
-    'Christopher Clark': 'https://chrisc36.github.io/'
-    'Sangho Lee': 'https://sangho-vision.github.io/'
-    'Ali Farhadi': 'https://homes.cs.washington.edu/~ali/'
-    'Kyle Lo': 'https://kyleclo.com/'
-    'Aaron Snoswell': 'http://aaronsnoswell.github.io'
-    'Amy Zhang': 'https://amyzhang.github.io/'
-    'Arunkumar Byravan': 'https://scholar.google.com/citations?user=obYwWiMAAAAJ&hl=en&oi=ao'
-    'Baohe Zhang': 'https://baohezhang.com/'
-    'Brandon Amos': 'http://bamos.github.io'
-    'Craig Schindler': 'https://www.craigschindler.net/'
-    'Craig B Schindler': 'https://www.craigschindler.net/'
-    'Daniel Drew': 'http://danieldrew.me'
-    'Daniel S Drew': 'http://danieldrew.me'
-    'Denis Yarats': 'https://cs.nyu.edu/~dy1042/'
-    'Edward Grefenstette': 'https://www.egrefen.com/'
-    'Eugene Vinitsky': 'https://eugenevinitsky.github.io'
-    'Franziska Meier': 'https://fmeier.github.io/'
-    'Frank Hutter': 'https://ml.informatik.uni-freiburg.de/profile/hutter/'
-    'Kurtland Chua': 'https://kchua.github.io/'
-    'Kristofer Pister': 'https://people.eecs.berkeley.edu/~pister/'
-    'Kristofer SJ Pister': 'https://people.eecs.berkeley.edu/~pister/'
-    'Luis Pineda': 'https://scholar.google.com/citations?user=rebEn8oAAAAJ&hl=en'
-    'Lydia Lee': 'http://people.eecs.berkeley.edu/~lydialee/'
-    'Martin Riedmiller': 'https://www.riedmiller.me'
-    'Markus Wulfmeier': 'https://markusrw.github.io'
-    'Michael Bloesch': 'https://scholar.google.com/citations?user=fn6GhgoAAAAJ'
-    'Nando de Freitas': 'https://scholar.google.com/citations?user=nzEluBwAAAAJ'
-    'Nathan Lambert': 'https://www.natolambert.com/'
-    'Omry Yadan': 'https://scholar.google.com/citations?user=zSsW478AAAAJ'
-    'Roberto Calandra': 'https://www.robertocalandra.com/about/'
-    'Sarah Dean': 'https://sdean.website'
-    'Samuel Cohen': 'https://scholar.google.com/citations?user=CmdjfTsAAAAJ'
-    'Sergey Levine': 'https://people.eecs.berkeley.edu/~svlevine/'
-    'Stuart Russell': 'http://people.eecs.berkeley.edu/~russell/'
-    'Thomas Gilbert': 'https://www.thomaskrendlgilbert.com'
-    'Thomas Krendl Gilbert': 'https://www.thomaskrendlgilbert.com'
-    'Tim Hertweck': 'https://scholar.google.com/citations?user=dlzWP0UAAAAJ&hl=en&oi=ao'
-    'Tom Zick': 'https://www.linkedin.com/in/tom-zick'
-    'Vladlen Koltun': 'http://vladlen.info/'
-    'Vibhavari Dasagi': 'https://scholar.google.com/citations?user=BrhJ6-EAAAAJ&hl=en&oi=ao'
-    'William Whitney': 'http://willwhitney.com'
-    'Yuval Tassa': 'https://scholar.google.com/citations?user=CjOTm_4AAAAJ'
-
+    'Nicolas Almerge': 'https://github.com/NicolasAlmerge'
+    'Matteo Santelmo': 'https://ch.linkedin.com/in/matteo-santelmo'
+    "Ilker Gul": 'https://ch.linkedin.com/in/ilker-gul99'
+    'Amin Asadi Sarijalou': 'https://ch.linkedin.com/in/amin-asadi-sarijalou'
+    "Remi Lebret": 'https://ch.linkedin.com/in/remi-lebret'
+    'Leo Laugier': 'https://leolaugier.github.io'
+    'Karl Aberer': 'https://people.epfl.ch/karl.aberer'
+    'Angelika Romanou': 'https://agromanou.github.io/'
+    'Syrielle Montariol': 'https://smontariol.github.io/'
+    'Debjit Paul': 'https://debjitpaul.github.io/'
+    'Antoine Bosselut': 'https://atcbosselut.github.io/'
+    'Jeffrey Sorensen': 'https://research.google/people/author14753/'
+    'Katerina Korre': 'https://scholar.google.com/citations?user=wfNVijkAAAAJ&hl=el'
+    'John Pavlopoulos': 'https://ipavlopoulos.github.io/'
+    'Katrin Tomanek': 'https://www.linkedin.com/in/katrintomanek/'
+    'Nithum Thain':  'https://research.google/people/105662/?&type=google'
+    'Lucas Dixon': 'https://research.google/people/lucasdixon/'
+    'Ion Androutsopoulos': 'https://www2.aueb.gr/users/ion/'
+    "Alberto Barron-cedeno": 'https://albarron.github.io/'
+    'Raghuram Vadapalli': 'https://uk.linkedin.com/in/raghuram-vadapalli'
+    'Thomas Bonald': 'https://perso.telecom-paristech.fr/bonald/Home_page.html'
+    'Alexandros Xenos': 'https://scholar.google.com/citations?user=ucSeBMgAAAAJ&hl=el'
+    'Anran Wang': 'https://sites.google.com/view/anranwang/home?pli=1'
+    'Chuan-Sheng Foo': 'https://ai.stanford.edu/~csfoo/'
+    'Théo Guénais': 'https://www.linkedin.com/in/theo-guenais'
+    'Vijay Chandrasekhar': 'https://www.linkedin.com/in/vijay-chandrasekhar-0476551b/'
+    'Vijay R. Chandrasekhar': 'https://www.linkedin.com/in/vijay-chandrasekhar-0476551b/'
+    'Daniil Bash': 'https://cz.linkedin.com/in/daniil-bash'
+    'Jose Recatala': 'https://scholar.google.com/citations?user=o9U95kwAAAAJ&hl=en'
+    'Hong Kuan Ng': 'https://research.a-star.edu.sg/researcher/hong-kuan-ng/'
+    'Savitha Ramasamy': 'https://sg.linkedin.com/in/savitha-ramasamy-936428b6'
+    'Kedar Hippalgaonkar': 'https://dr.ntu.edu.sg/entities/person/Kedar-Hippalgaonkar'
 
 
 skills:
   - title: Programming
-    details: Python
+    details: "Advanced: Python, SQL"
+  - title: " " 
+    details: "School projects: C/C++, Java, Matlab, CAML, HTML/CSS"
+  - title: " "
+    details: "Basic: PHP, JavaScript, Angular"
   - title: Frameworks
-    details: JAX, NumPy, Pandas, PyTorch, SciPy
+    details: Transformers, PyTorch, NumPy, Pandas, TensorFlow, SciPy, Scikit-learn
   - title: Tools
-    details: Linux, vim, git, tmux
+    details: Unix/Linux, git/GitHub, tmux, Windows, Mac OS, \LaTeX
 
 
 extracur:
-  - details: The Retort AI Podcast
-    year: 2023 -- cont.
-    url: https://retortai.com/
-  - details: Interconnects AI Blog
-    year: 2020 -- cont.
-    url: https://www.interconnects.ai/
-  - details: Cornell Varsity Lightweight Rowing
-    year: 2013 -- 2017
-    url: https://cornellsun.com/2017/06/04/lightweight-rowing-wins-3rd-national-title-since-2014-to-cap-off-undefeated-season/
-  - details: Novice Rowing Coach
-    year: 2017 -- 2018
-    url: https://lightweightcrew.berkeley.edu
-  - details: Graduates for Engaged and Extended Scholarship in Computing and Engineering President
-    year: 2021 -- 2022
-    url: https://geesegraduates.org
+  - details: Certified first aider, France | Basic first aid training (PSC)
+    year: 2025
+  - details: Amateur long-distance triathlon, Europe | Ironman 70.3 Westfriesland 2024 \& Marathon Valencia 2024
+    year: 2024
+  - details: Aéro-club Air France, France | Private Pilot License (PPL)
+    year: 2022
+  - details: "Renaissance Numérique, France | Co-author of the report Facial Recognition: Embodying European values"
+    year: 2020
+  - details: Genius CentraleSupélec, France | General Secretary. Student entrepreneurship federation fostering new start-ups
+    year: 2016

@@ -1,14 +1,17 @@
 # About
 This repo contains the source I use to automatically generate
-my curriculum vitae as a
-[PDF](https://natolambert.com/cv)
-from YAML and BibTeX input.
+my curriculum vitae as a PDF from YAML and BibTeX input.
 [generate.py](generate.py) reads from [cv.yaml](cv.yaml) and
 [publications](publications) and outputs LaTeX and Markdown
 by using Jinja templates.
 
-**Credit: ** this is just a lowly fork, of the awesome code built by my colleague Brandon Amos.
-The notable addition I added is getting stars for 🤗 HuggingFace models, datasets, and spaces.
+**Credit: ** this is just a lowly fork, of the awesome code built by Brandon Amos and Nathan Lambert. Thank you!
+The notable addition I added is a secret yaml file for protecting my email address and my phone number.
+In practice, create a `secrets.yaml` file at the root with:
+```yaml
+email: "your.email@address.com"
+phone: "+33 0 12 34 56 78"
+```
 
 # Building and running
 Dependencies are included in `requirements.txt` and can be installed
@@ -36,6 +39,7 @@ Install `moderncv` with:
 sudo tlmgr update --self
 sudo tlmgr install moderncv
 sudo tlmgr install mathabx
+sudo tlmgr install lastpage
 ```
 
 **Python env**:

@@ -1,498 +1,226 @@
-@misc{shao2025spuriousrewardsrethinkingtraining,
-      title={Spurious Rewards: Rethinking Training Signals in RLVR}, 
-      author={Rulin Shao and Shuyue Stella Li and Rui Xin and Scott Geng and Yiping Wang and Sewoong Oh and Simon Shaolei Du and Nathan Lambert and Sewon Min and Ranjay Krishna and Yulia Tsvetkov and Hannaneh Hajishirzi and Pang Wei Koh and Luke Zettlemoyer},
-      year={2025},
-      eprint={2506.10947},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2506.10947}, 
-}
-@article{malik2025rewardbench,
-  title={RewardBench 2: Advancing Reward Model Evaluation},
-  author={Malik, Saumya and Pyatkin, Valentina and Land, Sander and Morrison, Jacob and Smith, Noah A and Hajishirzi, Hannaneh and Lambert, Nathan},
-  journal={arXiv preprint arXiv:2506.01937},
-  year={2025},
-  _venue={arXiv Preprint},
-}
-@article{lambert2025reinforcement,
-  title={Reinforcement Learning from Human Feedback},
-  author={Lambert, Nathan},
-  journal={arXiv preprint arXiv:2504.12501},
-  year={2025},
-  selected={true},
-  _venue={Book},
-  url={https://rlhfbook.com},
+@inproceedings{10.1145/3701551.3704122,
+author = {Almerge, Nicolas and Santelmo, Matteo and Gul, Ilker and Asadi Sarijalou, Amin and Lebret, Remi and Laugier, Leo and Aberer, Karl},
+title = {SAGESSE: A System for Argument Generation, Extraction and Structuring of Social Exchanges},
+year = {2025},
+isbn = {9798400713293},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3701551.3704122},
+doi = {10.1145/3701551.3704122},
+abstract = {Online debates provide critical insights into public opinion and societal trends, yet the unstructured nature of these discussions presents significant challenges for analysis. In this paper, we present SAGESSE, a novel argumentation parsing pipeline tailored to Reddit debates, leveraging the capabilities of large language models to structure and interpret complex online arguments. SAGESSE generates detailed argument maps that organize debates systematically, offering a clearer understanding of discourse dynamics. We have developed a web application where users can select controversial Reddit topics and visualize the corresponding argument maps generated from user comments. This tool has the potential to aid analysts, policymakers, and researchers in tracking debate progress, gauging public sentiment, and identifying influential arguments. The web application is available at https://modemos.epfl.ch/sagesse/ .},
+booktitle = {Proceedings of the Eighteenth ACM International Conference on Web Search and Data Mining},
+pages = {1024–1027},
+numpages = {4},
+keywords = {argument maps, large language models, politics, social media},
+location = {Hannover, Germany},
+series = {WSDM '25},
+_venue = {WSDM}
 }
 
-@article{olmo20242,
-  title={2 OLMo 2 Furious},
-    author={Team OLMo and Pete Walsh and Luca Soldaini and Dirk Groeneveld and Kyle Lo and Shane Arora and Akshita Bhagia and Yuling Gu and Shengyi Huang and Matt Jordan and Nathan Lambert and Dustin Schwenk and Oyvind Tafjord and Taira Anderson and David Atkinson and Faeze Brahman and Christopher Clark and Pradeep Dasigi and Nouha Dziri and Michal Guerquin and Hamish Ivison and Pang Wei Koh and Jiacheng Liu and Saumya Malik and William Merrill and Lester James V. Miranda and Jacob Morrison and Tyler Murray and Crystal Nam and Valentina Pyatkin and Aman Rangapur and Michael Schmitz and Sam Skjonsberg and David Wadden and Christopher Wilhelm and Michael Wilson and Luke Zettlemoyer and Ali Farhadi and Noah A. Smith and Hannaneh Hajishirzi},
-  journal={arXiv preprint arXiv:2501.00656},
-  year={2024},
-  _venue={arXiv Preprint},
-  url={https://arxiv.org/abs/2501.00656},
-  codeurl={https://github.com/allenai/molmo},
-  selected={true},
+@inproceedings{romanou-etal-2023-crab,
+    title = "{CRAB}: Assessing the Strength of Causal Relationships Between Real-world Events",
+    author = "Romanou, Angelika  and
+      Montariol, Syrielle  and
+      Paul, Debjit  and
+      Laugier, Leo  and
+      Aberer, Karl  and
+      Bosselut, Antoine",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.940/",
+    doi = "10.18653/v1/2023.emnlp-main.940",
+    pages = "15198--15216",
+    abstract = "Understanding narratives requires reasoning about the cause-and-effect relationships between events mentioned in the text. While existing foundation models yield impressive results in many NLP tasks requiring reasoning, it is unclear whether they understand the complexity of the underlying network of causal relationships of events in narratives. In this work, we present CRAB, a new Causal Reasoning Assessment Benchmark designed to evaluate causal understanding of events in real-world narratives. CRAB contains fine-grained, contextual causality annotations for {\textasciitilde}2.7K pairs of real-world events that describe various newsworthy event timelines (e.g., the acquisition of Twitter by Elon Musk). Using CRAB, we measure the performance of several large language models, demonstrating that most systems achieve poor performance on the task. Motivated by classical causal principles, we also analyze the causal structures of groups of events in CRAB, and find that models perform worse on causal reasoning when events are derived from complex causal structures compared to simple linear causal chains. We make our dataset and code available to the research community.",
+    _venue = {EMNLP}
 }
 
-@article{lambert2024tulu3,
-  title = {Tülu 3: Pushing Frontiers in Open Language Model Post-Training},
-  author = {
-    Nathan Lambert and 
-    Jacob Morrison and 
-    Valentina Pyatkin and 
-    Shengyi Huang and 
-    Hamish Ivison and 
-    Faeze Brahman and 
-    Lester James V. Miranda and 
-    Alisa Liu and 
-    Nouha Dziri and 
-    Shane Lyu and 
-    Yuling Gu and 
-    Saumya Malik and 
-    Victoria Graf and 
-    Jena D. Hwang and 
-    Jiangjiang Yang and
-    Ronan Le Bras and
-    Oyvind Tafjord and
-    Chris Wilhelm and
-    Luca Soldaini and 
-    Noah A. Smith and 
-    Yizhong Wang and 
-    Pradeep Dasigi and 
-    Hannaneh Hajishirzi
-  },
-  year = {2024},
-  email = {tulu@allenai.org},
-  _venue = {Technical Report},
-  url = {https://arxiv.org/abs/2411.15124},
-  codeurl = {https://github.com/allenai/open-instruct},
-  selected={true},
+@inproceedings{sorensen-etal-2023-juage,
+    title = "{JUAGE} at {S}em{E}val-2023 Task 10: Parameter Efficient Classification",
+    author = "Sorensen, Jeffrey  and
+      Korre, Katerina  and
+      Pavlopoulos, John  and
+      Tomanek, Katrin  and
+      Thain, Nithum  and
+      Dixon, Lucas  and
+      Laugier, Leo",
+    editor = {Ojha, Atul Kr.  and
+      Do{\u{g}}ru{\"o}z, A. Seza  and
+      Da San Martino, Giovanni  and
+      Tayyar Madabushi, Harish  and
+      Kumar, Ritesh  and
+      Sartori, Elisa},
+    booktitle = "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    month = jul,
+    year = "2023",
+    address = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.semeval-1.166/",
+    doi = "10.18653/v1/2023.semeval-1.166",
+    pages = "1195--1203",
+    abstract = "Using pre-trained language models to implement classifiers from small to modest amounts of training data is an area of active research. The ability of large language models to generalize from few-shot examples and to produce strong classifiers is extended using the engineering approach of parameter-efficient tuning. Using the Explainable Detection of Online Sexism (EDOS) training data and a small number of trainable weights to create a tuned prompt vector, a competitive model for this task was built, which was top-ranked in Subtask B.",
+    _venue = {SemEval}
 }
 
-@article{deitke2024molmo,
-  title={Molmo and pixmo: Open weights and open data for state-of-the-art multimodal models},
-  author={Matt Deitke and Christopher Clark and Sangho Lee and Rohun Tripathi and Yue Yang and Jae Sung Park and Mohammadreza Salehi and Niklas Muennighoff and Kyle Lo and Luca Soldaini and Jiasen Lu and Taira Anderson and Erin Bransom and Kiana Ehsani and Huong Ngo and YenSung Chen and Ajay Patel and Mark Yatskar and Christopher Callison-Burch and Andrew Head and Rose Hendrix and Favyen Bastani and Eli VanderBilt and Nathan Lambert and Yvonne Chou and Arnavi Chheda and Jenna Sparks and Sam Skjonsberg and Michael Schmitz and Aaron Sarnat and Byron Bischoff and Pete Walsh and Christopher Newell and Piper Wolters and Tanmay Gupta and Kuo-Hao Zeng and Jon Borchardt and Dirk Groeneveld and Jennifer Dumas and Crystal Nam and Sophie Lebrecht and Caitlin Marie Wittlif and Carissa Schoenick and Oscar Michel and Ranjay Krishna and Luca Weihs and Noah A. Smith and Hanna Hajishirzi and Ross Girshick and Ali Farhadi and Aniruddha Kembhavi},
-  journal={arXiv preprint arXiv:2409.17146},
-  year={2024},
-  _venue={arXiv Preprint},
-  url={https://arxiv.org/abs/2409.17146},
-  codeurl={https://github.com/allenai/molmo},
+@inproceedings{korre-etal-2023-harmful,
+    title = "Harmful Language Datasets: An Assessment of Robustness",
+    author = "Korre, Katerina  and
+      Pavlopoulos, John  and
+      Sorensen, Jeffrey  and
+      Laugier, Leo  and
+      Androutsopoulos, Ion  and
+      Dixon, Lucas  and
+      Barron-cedeno, Alberto",
+    editor = "Chung, Yi-ling  and
+      R{\{}{\textbackslash}{''}ottger{\}}, Paul  and
+      Nozza, Debora  and
+      Talat, Zeerak  and
+      Mostafazadeh Davani, Aida",
+    booktitle = "The 7th Workshop on Online Abuse and Harms (WOAH)",
+    month = jul,
+    year = "2023",
+    address = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.woah-1.24/",
+    doi = "10.18653/v1/2023.woah-1.24",
+    pages = "221--230",
+    abstract = "The automated detection of harmful language has been of great importance for the online world, especially with the growing importance of social media and, consequently, polarisation. There are many open challenges to high quality detection of harmful text, from dataset creation to generalisable application, thus calling for more systematic studies. In this paper, we explore re-annotation as a means of examining the robustness of already existing labelled datasets, showing that, despite using alternative definitions, the inter-annotator agreement remains very inconsistent, highlighting the intrinsically subjective and variable nature of the task. In addition, we build automatic toxicity detectors using the existing datasets, with their original labels, and we evaluate them on our multi-definition and multi-source datasets. Surprisingly, while other studies show that hate speech detection models perform better on data that are derived from the same distribution as the training set, our analysis demonstrates this is not necessarily true.",
+    _venue = {WOAH}
 }
 
-@article{gureja2024m,
-  title={M-RewardBench: Evaluating Reward Models in Multilingual Settings},
-  author={Gureja, Srishti and Miranda, Lester James V and Islam, Shayekh Bin and Maheshwary, Rishabh and Sharma, Drishti and Winata, Gusti and Lambert, Nathan and Ruder, Sebastian and Hooker, Sara and Fadaee, Marzieh},
-  journal={arXiv preprint arXiv:2410.15522},
-  year={2024},
-  codeurl={https://github.com/for-ai/m-rewardbench},
-  url={https://arxiv.org/abs/2410.15522},
-  _venue={arXiv Preprint},
-}
-@article{muennighoff2024olmoe,
-  title={OLMoE: Open Mixture-of-Experts Language Models},
-  author={Niklas Muennighoff and Luca Soldaini and Dirk Groeneveld and Kyle Lo and Jacob Daniel Morrison and Sewon Min and Weijia Shi and Pete Walsh and Oyvind Tafjord and Nathan Lambert and Yuling Gu and Shane Arora and Akshita Bhagia and Dustin Schwenk and David Wadden and Alexander Wettig and Binyuan Hui and Tim Dettmers and Douwe Kiela and Ali Farhadi and Noah A. Smith and Pang Wei Koh and Amanpreet Singh and Hanna Hajishirzi},
-  journal={arXiv preprint arXiv:2409.02060},
-  year={2024},
-  _venue={arXiv Preprint},
-  url={https://arxiv.org/abs/2409.02060},
-  codeurl={https://github.com/allenai/OLMoE},
-}
+@INPROCEEDINGS {10429920,
+author = { Laugier, Leo and Vadapalli, Raghuram and Bonald, Thomas and Dixon, Lucas },
+booktitle = { 2023 IEEE 9th International Conference on Collaboration and Internet Computing (CIC) },
+title = {{ KNNs of Semantic Encodings for Rating Prediction }},
+year = {2023},
+volume = {},
+ISSN = {},
+pages = {82-91},
+abstract = { This paper explores a novel application of textual semantic similarity to user-preference representation for rating prediction. The approach represents a user's preferences as a graph of textual snippets from review text, where the edges are defined by semantic similarity. This textual, memory-based approach to rating prediction enables review-based explanations for recommendations. The method is evaluated quantitatively, highlighting that leveraging text in this way outperforms both strong memory-based and model-based collaborative filtering baselines. },
+keywords = {Text analysis;Computational modeling;Collaborative filtering;Semantics;Natural languages;Encoding;Internet},
+doi = {10.1109/CIC58953.2023.00020},
+url = {https://doi.ieeecomputersociety.org/10.1109/CIC58953.2023.00020},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+month =Nov,
+_venue = {IEEE CIC}}
 
-@misc{basdevant2024framework,
-      title={Towards a Framework for Openness in Foundation Models: Proceedings from the Columbia Convening on Openness in Artificial Intelligence}, 
-      author={Adrien Basdevant and Camille François and Victor Storchan and Kevin Bankston and Ayah Bdeir and Brian Behlendorf and Merouane Debbah and Sayash Kapoor and Yann LeCun and Mark Surman and Helen King-Turvey and Nathan Lambert and Stefano Maffulli and Nik Marda and Govind Shivkumar and Justine Tunney},
-      year={2024},
-      eprint={2405.15802},
-      archivePrefix={arXiv},
-      primaryClass={cs.SE},
-      _venue={Workshop Proceedings},
-      url={https://arxiv.org/abs/2405.15802},
-}
-
-@article{ivison2024unpacking,
-  title={Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback},
-  author={Ivison, Hamish and Wang, Yizhong and Liu, Jiacheng and Wu, Zeqiu and Pyatkin, Valentina and Lambert, Nathan and Smith, Noah A and Choi, Yejin and Hajishirzi, Hannaneh},
-  journal={arXiv preprint arXiv:2406.09279},
-  year={2024},
-  _venue={NeurIPS},
-  url={https://arxiv.org/abs/2406.09279},
-  codeurl={https://github.com/hamishivi/EasyLM}
+@phdthesis{laugier:tel-03884481,
+  TITLE = {{Analysis and control of online interactions through neural natural language processing}},
+  AUTHOR = {Laugier, Leo},
+  URL = {https://theses.hal.science/tel-03884481},
+  NUMBER = {2022IPPAT035},
+  SCHOOL = {{Institut Polytechnique de Paris}},
+  YEAR = {2022},
+  MONTH = Nov,
+  KEYWORDS = {Natural language processing ; Recommender systems ; Artificial neural networks ; Computer Science ; Artificial intelligence ; Machine learning ; Syst{\`e}mes de recommandation ; R{\'e}seaux de neurones artificiels ; Informatique ; Traitement automatique du langage naturel ; Intelligence artificielle ; Apprentissage automatique},
+  TYPE = {Theses},
+  PDF = {https://theses.hal.science/tel-03884481v1/file/113860_LAUGIER_2022_archivage.pdf},
+  HAL_ID = {tel-03884481},
+  HAL_VERSION = {v1},
+  _venue = {IP Paris}
 }
 
-@article{han2024wildguard,
-  title={Wildguard: Open one-stop moderation tools for safety risks, jailbreaks, and refusals of llms},
-  author={Han, Seungju and Rao, Kavel and Ettinger, Allyson and Jiang, Liwei and Lin, Bill Yuchen and Lambert, Nathan and Choi, Yejin and Dziri, Nouha},
-  journal={arXiv preprint arXiv:2406.18495},
-  year={2024},
-  url={https://arxiv.org/abs/2406.18495},
-  _venue={NeurIPS Dataset and Benchmarks},
-  codeurl={https://github.com/allenai/wildguard},
+@article{journals/firstmonday/XenosPADSL22,
+  author    = {Xenos, Alexandros and Pavlopoulos, John and Androutsopoulos, Ion and Dixon, Lucas and Sorensen, Jeffrey and Laugier, Leo},
+  title     = {Toxicity detection sensitive to conversational context.},
+  journal   = {First Monday},
+  volume    = {27},
+  number    = {9},
+  year      = {2022},
+  url       = {https://firstmonday.org/ojs/index.php/fm/article/view/12285/10696},
+  _venue = {First Monday}
 }
 
-@article{lambert2024self,
-  title={Self-directed synthetic dialogues and revisions technical report},
-  author={Lambert, Nathan and Schoelkopf, Hailey and Gokaslan, Aaron and Soldaini, Luca and Pyatkin, Valentina and Castricato, Louis},
-  journal={arXiv preprint arXiv:2407.18421},
-  year={2024},
-  url={https://arxiv.org/abs/2407.18421},
-  _venue={Technical Report},
+@inproceedings{pavlopoulos-etal-2022-detection,
+    title = "From the Detection of Toxic Spans in Online Discussions to the Analysis of Toxic-to-Civil Transfer",
+    author = "Pavlopoulos, John  and
+      Laugier, Leo  and
+      Xenos, Alexandros  and
+      Sorensen, Jeffrey  and
+      Androutsopoulos, Ion",
+    editor = "Muresan, Smaranda  and
+      Nakov, Preslav  and
+      Villavicencio, Aline",
+    booktitle = "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = may,
+    year = "2022",
+    address = "Dublin, Ireland",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.acl-long.259/",
+    doi = "10.18653/v1/2022.acl-long.259",
+    pages = "3721--3734",
+    abstract = "We study the task of toxic spans detection, which concerns the detection of the spans that make a text toxic, when detecting such spans is possible. We introduce a dataset for this task, ToxicSpans, which we release publicly. By experimenting with several methods, we show that sequence labeling models perform best, but methods that add generic rationale extraction mechanisms on top of classifiers trained to predict if a post is toxic or not are also surprisingly promising. Finally, we use ToxicSpans and systems trained on it, to provide further analysis of state-of-the-art toxic to non-toxic transfer systems, as well as of human performance on that latter task. Our work highlights challenges in finer toxicity detection and mitigation.",
+    _venue = {ACL}
 }
 
-@misc{soldaini2024dolma,
-      title={Dolma: an Open Corpus of Three Trillion Tokens for Language Model Pretraining Research}, 
-      author={Luca Soldaini and Rodney Kinney and Akshita Bhagia and Dustin Schwenk and David Atkinson and Russell Authur and Ben Bogin and Khyathi Chandu and Jennifer Dumas and Yanai Elazar and Valentin Hofmann and Ananya Harsh Jha and Sachin Kumar and Li Lucy and Xinxi Lyu and Nathan Lambert and Ian Magnusson and Jacob Morrison and Niklas Muennighoff and Aakanksha Naik and Crystal Nam and Matthew E. Peters and Abhilasha Ravichander and Kyle Richardson and Zejiang Shen and Emma Strubell and Nishant Subramani and Oyvind Tafjord and Pete Walsh and Luke Zettlemoyer and Noah A. Smith and Hannaneh Hajishirzi and Iz Beltagy and Dirk Groeneveld and Jesse Dodge and Kyle Lo},
-      year={2024},
-      eprint={2402.00159},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      _venue={ACL},
-      url={https://arxiv.org/abs/2402.00159},
-      codeurl={https://github.com/allenai/dolma},
-      _note={Best Paper Award},
+@inproceedings{pavlopoulos-etal-2021-semeval,
+    title = "{S}em{E}val-2021 Task 5: Toxic Spans Detection",
+    author = "Pavlopoulos, John  and
+      Sorensen, Jeffrey  and
+      Laugier, Leo  and
+      Androutsopoulos, Ion",
+    editor = "Palmer, Alexis  and
+      Schneider, Nathan  and
+      Schluter, Natalie  and
+      Emerson, Guy  and
+      Herbelot, Aurelie  and
+      Zhu, Xiaodan",
+    booktitle = "Proceedings of the 15th International Workshop on Semantic Evaluation (SemEval-2021)",
+    month = aug,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.semeval-1.6/",
+    doi = "10.18653/v1/2021.semeval-1.6",
+    pages = "59--69",
+    abstract = "The Toxic Spans Detection task of SemEval-2021 required participants to predict the spans of toxic posts that were responsible for the toxic label of the posts. The task could be addressed as supervised sequence labeling, using training data with gold toxic spans provided by the organisers. It could also be treated as rationale extraction, using classifiers trained on potentially larger external datasets of posts manually annotated as toxic or not, without toxic span annotations. For the supervised sequence labeling approach and evaluation purposes, posts previously labeled as toxic were crowd-annotated for toxic spans. Participants submitted their predicted spans for a held-out test set and were scored using character-based F1. This overview summarises the work of the 36 teams that provided system descriptions.",
+    _venue = {SemEval}
 }
 
-@misc{groeneveld2024olmo,
-      title={OLMo: Accelerating the Science of Language Models}, 
-      author={Dirk Groeneveld and Iz Beltagy and Pete Walsh and Akshita Bhagia and Rodney Kinney and Oyvind Tafjord and Ananya Harsh Jha and Hamish Ivison and Ian Magnusson and Yizhong Wang and Shane Arora and David Atkinson and Russell Authur and Khyathi Raghavi Chandu and Arman Cohan and Jennifer Dumas and Yanai Elazar and Yuling Gu and Jack Hessel and Tushar Khot and William Merrill and Jacob Morrison and Niklas Muennighoff and Aakanksha Naik and Crystal Nam and Matthew E. Peters and Valentina Pyatkin and Abhilasha Ravichander and Dustin Schwenk and Saurabh Shah and Will Smith and Emma Strubell and Nishant Subramani and Mitchell Wortsman and Pradeep Dasigi and Nathan Lambert and Kyle Richardson and Luke Zettlemoyer and Jesse Dodge and Kyle Lo and Luca Soldaini and Noah A. Smith and Hannaneh Hajishirzi},
-      year={2024},
-      eprint={2402.00838},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      _venue={ACL},
-      url={https://arxiv.org/abs/2402.00838},
-      codeurl={https://github.com/allenai/OLMo},
-      _note={Best Paper Award},
+@inproceedings{laugier-etal-2021-civil,
+    title = "Civil Rephrases Of Toxic Texts With Self-Supervised Transformers",
+    author = "Laugier, Leo  and
+      Pavlopoulos, John  and
+      Sorensen, Jeffrey  and
+      Dixon, Lucas",
+    editor = "Merlo, Paola  and
+      Tiedemann, Jorg  and
+      Tsarfaty, Reut",
+    booktitle = "Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume",
+    month = apr,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.eacl-main.124/",
+    doi = "10.18653/v1/2021.eacl-main.124",
+    pages = "1442--1461",
+    abstract = "Platforms that support online commentary, from social networks to news sites, are increasingly leveraging machine learning to assist their moderation efforts. But this process does not typically provide feedback to the author that would help them contribute according to the community guidelines. This is prohibitively time-consuming for human moderators to do, and computational approaches are still nascent. This work focuses on models that can help suggest rephrasings of toxic comments in a more civil manner. Inspired by recent progress in unpaired sequence-to-sequence tasks, a self-supervised learning model is introduced, called CAE-T5. CAE-T5 employs a pre-trained text-to-text transformer, which is fine tuned with a denoising and cyclic auto-encoder loss. Experimenting with the largest toxicity detection dataset to date (Civil Comments) our model generates sentences that are more fluent and better at preserving the initial content compared to earlier text style transfer systems which we compare with using several scoring systems and human evaluation.",
+    _venue = {EACL}
+    }
+
+
+@inproceedings{Laugier2019Encoding,
+  title        = {Encoding Knowledge Graph with Graph {CNN} for Question Answering},
+  author       = {Leo Laugier and Anran Wang and Chuan-Sheng Foo and Théo Guénais and Vijay Chandrasekhar},
+  booktitle    = {Proceedings of the International Conference on Learning Representations (ICLR)},
+  year         = {2019},
+  url          = {https://rlgm.github.io/papers/14.pdf},
+  _venue      = {Representation Learning on Graphs and Manifolds ICLR Workshop}
 }
 
-@misc{albalak2024survey,
-      title={A Survey on Data Selection for Language Models}, 
-      author={Alon Albalak and Yanai Elazar and Sang Michael Xie and Shayne Longpre and Nathan Lambert and Xinyi Wang and Niklas Muennighoff and Bairu Hou and Liangming Pan and Haewon Jeong and Colin Raffel and Shiyu Chang and Tatsunori Hashimoto and William Yang Wang},
-      year={2024},
-      eprint={2402.16827},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      _venue={TMLR},
-      url={https://arxiv.org/abs/2402.16827},
+@inproceedings{LaugierBashRecatalaNgRamasamyFooChandrasekharHippalgaonkar2018,
+  title        = {Predicting thermoelectric properties from crystal graphs and material descriptors ‒ first application for functional materials},
+  author       = {Leo Laugier and Daniil Bash and Jose Recatala and Hong Kuan Ng and Savitha Ramasamy and Chuan-Sheng Foo and Vijay R. Chandrasekhar and Kedar Hippalgaonkar},
+  booktitle    = {Machine Learning for Molecules and Materials, NeurIPS 2018 Workshop},
+  year         = {2018},
+  eprint       = {arXiv:1811.06219},
+  url          = {https://arxiv.org/abs/1811.06219},
+  _venue       = {Machine Learning for Molecules and Materials, NeurIPS Workshop}
 }
 
-@misc{lambert2024rewardbench,
-      title={RewardBench: Evaluating Reward Models for Language Modeling}, 
-      author={Nathan Lambert and Valentina Pyatkin and Jacob Morrison and LJ Miranda and Bill Yuchen Lin and Khyathi Chandu and Nouha Dziri and Sachin Kumar and Tom Zick and Yejin Choi and Noah A. Smith and Hannaneh Hajishirzi},
-      year={2025},
-      eprint={2403.13787},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      selected={true},
-      url={https://arxiv.org/abs/2403.13787},
-      _venue={NAACL},
-      codeurl={https://github.com/allenai/reward-bench},
-}
-
-@misc{conitzer2024social,
-      title={Social Choice Should Guide AI Alignment in Dealing with Diverse Human Feedback}, 
-      author={Vincent Conitzer and Rachel Freedman and Jobst Heitzig and Wesley H. Holliday and Bob M. Jacobs and Nathan Lambert and Milan Mossé and Eric Pacuit and Stuart Russell and Hailey Schoelkopf and Emanuel Tewolde and William S. Zwicker},
-      year={2024},
-      eprint={2404.10271},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2404.10271},
-      _venue={ICML Position Paper},
-}
-
-@misc{singhal2024d2po,
-      title={D2PO: Discriminator-Guided DPO with Response Evaluation Models}, 
-      author={Prasann Singhal and Nathan Lambert and Scott Niekum and Tanya Goyal and Greg Durrett},
-      year={2024},
-      eprint={2405.01511},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2405.01511},
-      _venue={COLM},
-}
-
-@misc{ivison2023camels,
-      title={Camels in a Changing Climate: Enhancing LM Adaptation with Tulu 2}, 
-      author={Hamish Ivison and Yizhong Wang and Valentina Pyatkin and Nathan Lambert and Matthew Peters and Pradeep Dasigi and Joel Jang and David Wadden and Noah A. Smith and Iz Beltagy and Hannaneh Hajishirzi},
-      year={2023},
-      eprint={2311.10702},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2311.10702},
-      _venue={arXiv Preprint},
-      codeurl={https://github.com/allenai/open-instruct},
-}
-
-@misc{lambert2024alignment,
-      title={The Alignment Ceiling: Objective Mismatch in Reinforcement Learning from Human Feedback}, 
-      author={Nathan Lambert and Roberto Calandra},
-      year={2023},
-      eprint={2311.00168},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      _venue={arXiv Preprint},
-      url={https://arxiv.org/abs/2311.00168},
-}
-
-@misc{tunstall2023zephyr,
-      title={Zephyr: Direct Distillation of LM Alignment},
-      author={Lewis Tunstall and Edward Beeching and Nathan Lambert and Nazneen Rajani and Kashif Rasul and Younes Belkada and Shengyi Huang and Leandro von Werra and Clémentine Fourrier and Nathan Habib and Nathan Sarrazin and Omar Sanseviero and Alexander M. Rush and Thomas Wolf},
-      year={2024},
-      eprint={2310.16944},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      _venue={COLM},
-      url={https://arxiv.org/abs/2310.16944},
-      codeurl={https://github.com/huggingface/alignment-handbook},
-}
-
-@misc{lambert2023entangled,
-      title={Entangled Preferences: The History and Risks of Reinforcement Learning and Human Feedback},
-      author={Nathan Lambert and Thomas Krendl Gilbert and Tom Zick},
-      eprint={2310.13595},
-      archivePrefix={arXiv},
-      primaryClass={cs.CY},
-      _venue={arXiv Preprint},
-      url={https://arxiv.org/abs/2310.13595},
-      selected={true},
-      year={2023},
-}
-
-@misc{wei2023unified,
-      title={A Unified View on Solving Objective Mismatch in Model-Based Reinforcement Learning},
-      author={Ran Wei and Nathan Lambert and Anthony McDonald and Alfredo Garcia and Roberto Calandra},
-      year={2024},
-      eprint={2310.06253},
-      archivePrefix={arXiv},
-      url={https://arxiv.org/abs/2310.06253},
-      primaryClass={cs.LG},
-      _venue={Transactions on Machine Learning Research},
-}
-
-@misc{shoker2023confidencebuilding,
-      title={Confidence-Building Measures for Artificial Intelligence: Workshop Proceedings},
-      author={Sarah Shoker and Andrew Reddie and Sarah Barrington and Miles Brundage and Husanjot Chahal and Michael Depp and Bill Drexel and Ritwik Gupta and Marina Favaro and Jake Hecla and Alan Hickey and Margarita Konaev and Kirthi Kumar and Nathan Lambert and Andrew Lohn and Cullen O'Keefe and Nazneen Rajani and Michael Sellitto and Robert Trager and Leah Walker and Alexa Wehsener and Jessica Young},
-      year={2023},
-      url={https://arxiv.org/abs/2308.00862},
-      _venue={arXiv Preprint},
-}
-
-@article{alvara2023bliss,
-  title={BLISS: Interplanetary Exploration with Swarms of Low-Cost Spacecraft},
-  author={Alvara, Alexander N and Lee, Lydia and Sin, Emmanuel and Lambert, Nathan and Westphal, Andrew J and Pister, Kristofer SJ},
-  _venue={Acta Astraunica},
-  url={https://arxiv.org/abs/2307.11226},
-  year={2024}
-}
-
-@article{mitchell2022measuring,
-  title={Measuring Data},
-  author={Mitchell, Margaret and Luccioni, Alexandra Sasha and Lambert, Nathan and Gerchick, Marissa and McMillan-Major, Angelina and Ozoani, Ezinwanne and Rajani, Nazneen and Thrush, Tristan and Jernite, Yacine and Kiela, Douwe},
-  journal={arXiv preprint arXiv:2212.05129},
-  url={https://arxiv.org/abs/2212.05129},
-  _venue={arXiv Preprint},
-  year={2022}
-}
-
-@misc{gilbert2022reward,
-  title={Reward Reports for Reinforcement Learning},
-  author={Gilbert, Thomas and Dean, Sarah and Lambert, Nathan and Zick, Tom and Snoswell, Aaron},
-  year={2023},
-  url={https://arxiv.org/abs/2204.10817},
-  codeurl={https://github.com/RewardReports/reward-reports},
-  _venue={AAAI/ACM Conference on AI, Ethics, and Society},
-  abstract={
-  }
-}
-
-@misc{gilbert2021choices,
-  title={Choices, Risks, and Reward Reports: Charting Public Policy for Reinforcement Learning Systems},
-  author={Gilbert, Thomas and Dean, Sarah and Zick, Tom and Lambert, Nathan},
-  year={2022},
-  url={http://arxiv.org/abs/2202.05716},
-  _venue={Center for Long-Term Cybersecurity Whitepaper Series},
-  _talkurl={https://vod.video.cornell.edu/media/Digital+Life+Seminar+%7C+Thomas+K.+Gilbert/1_57conhdj},
-  selected={true},
-  abstract={
-  }
-}
-
-@inproceedings{lambert2022compounding,
-  title={Investigating Compounding Prediction Errors in One-step Dynamics Models},
-  author={Lambert, Nathan and Calandra, Roberto and Pister, Kristofer},
-  year={2022},
-%  booktitle={L4DC},
-  _venue={Under Review},
-%  slidesurl={},
-  _talkurl={},
-% _note={},
-  url={http://arxiv.org/abs/2203.09637},
-  codeurl={https://github.com/natolambert/continuousprediction/tree/compound},
-  _venue={arXiv Preprint},
-  selected={true},
-  abstract={
-  Model-based reinforcement learning (MBRL) has been shown to be a powerful framework for data-efficiently learning control of continuous tasks. Recent work in MBRL has mostly focused on using more advanced function approximators and planning schemes, with little development of the general framework. In this paper, we identify a fundamental issue of the standard MBRL framework--what we call the objective mismatch issue. Objective mismatch arises when one objective is optimized in the hope that a second, often uncorrelated, metric will also be optimized. In the context of MBRL, we characterize the objective mismatch between training the forward dynamics model wrt the likelihood of the one-step ahead prediction, and the overall goal of improving performance on a downstream control task. For example, this issue can emerge with the realization that dynamics models effective for a specific task do not necessarily need to be globally accurate, and vice versa globally accurate models might not be sufficiently accurate locally to obtain good control performance on a specific task. In our experiments, we study this objective mismatch issue and demonstrate that the likelihood of one-step ahead predictions is not always correlated with control performance. This observation highlights a critical limitation in the MBRL framework which will require further research to be fully understood and addressed. We propose an initial method to mitigate the mismatch issue by re-weighting dynamics model training. Building on it, we conclude with a discussion about other potential directions of research for addressing this issue.
-  }
-}
-
-@article{lambert2022explore,
-  title={Understanding the Challenges of Exploration for Offline Reinforcement Learning},
-  author={Lambert, Nathan and Wulfmeier, Markus and Byravan, Arunkumar and Bloesch, Michael and Whitney, William and Dasagi, Vibhavari and Hertweck, Tim and Riedmiller, Martin},
-  _venue={arXiv Preprint},
-  _talkurl={https://www.youtube.com/watch?v=HxbeQI7hfo4},
-  _slidesurl={https://drive.google.com/file/d/1cxpA8gGNErShrf4Bz04wbgY_rao3pLgd/view},
-  url={https://arxiv.org/abs/2201.11861},
-  selected={true},
-  year={2022},
-  abstract={}
-}
-
-
-
-@article{pineda2021mbrl,
-  title={MBRL-Lib: A Modular Library for Model-based Reinforcement Learning},
-  author={Pineda, Luis and Amos, Brandon and Zhang, Amy and Lambert, Nathan and Calandra, Roberto},
-  year={2021},
-  url={https://arxiv.org/abs/2104.10159},
-  _venue={arXiv Preprint},
-  codeurl={https://github.com/facebookresearch/mbrl-lib},
-  abstract={
-    Model-based reinforcement learning is a compelling framework for
-    data-efficient learning of agents that interact with
-    the world. This family of algorithms has many
-    subcomponents that need to be carefully selected and
-    tuned. As a result the entry-bar for researchers to
-    approach the field and to deploy it in real-world
-    tasks can be daunting. In this paper, we present
-    MBRL-Lib -- a machine learning library for
-    model-based reinforcement learning in continuous
-    state-action spaces based on PyTorch. MBRL-Lib is
-    designed as a platform for both researchers, to
-    easily develop, debug and compare new algorithms,
-    and non-expert user, to lower the entry-bar of
-    deploying state-of-the-art algorithms.
-  }
-}
-
-@inproceedings{lambert2020objective,
-  title={Objective Mismatch in Model-based Reinforcement Learning},
-  author={Lambert, Nathan and Amos, Brandon and Yadan, Omry and Calandra, Roberto},
-  year={2020},
-  booktitle={L4DC},
-  _venue={Conference on Learning for Decision and Control (L4DC)},
-  year={2020},
-  url={https://arxiv.org/abs/2002.04523},
- % slidesurl={},
-%  _talkurl={},
-%  _note={},
-  selected={true},
-  abstract={
-  Model-based reinforcement learning (MBRL) has been shown to be a powerful framework for data-efficiently learning control of continuous tasks. Recent work in MBRL has mostly focused on using more advanced function approximators and planning schemes, with little development of the general framework. In this paper, we identify a fundamental issue of the standard MBRL framework--what we call the objective mismatch issue. Objective mismatch arises when one objective is optimized in the hope that a second, often uncorrelated, metric will also be optimized. In the context of MBRL, we characterize the objective mismatch between training the forward dynamics model wrt the likelihood of the one-step ahead prediction, and the overall goal of improving performance on a downstream control task. For example, this issue can emerge with the realization that dynamics models effective for a specific task do not necessarily need to be globally accurate, and vice versa globally accurate models might not be sufficiently accurate locally to obtain good control performance on a specific task. In our experiments, we study this objective mismatch issue and demonstrate that the likelihood of one-step ahead predictions is not always correlated with control performance. This observation highlights a critical limitation in the MBRL framework which will require further research to be fully understood and addressed. We propose an initial method to mitigate the mismatch issue by re-weighting dynamics model training. Building on it, we conclude with a discussion about other potential directions of research for addressing this issue.
-  }
-}
-
-
-@article{selden2021botnet,
-  title={BotNet: A Simulator for Studying the Effects of Accurate Communication Models on High-agent-count Multi-agent Control},
-  author={Selden, Mark and Campos, Felipe and Zhou, Jason and Lambert, Nathan and Drew, Daniel and Pister, Kristofer},
-  _venue={Symposium on Multi-Agent and Multi-Robot Systems},
-  url={https://arxiv.org/abs/2108.13606},
-  _note={Best Student Paper Finalist},
-  _talkurl={https://youtu.be/jRWk-rwSybU},
-  codeurl={https://github.com/PisterLab/BotNet},
-  year={2021}
-}
-
-@ARTICLE{dean2021axes,
-  author={Dean, Sarah and Gilbert, Thomas Krendl and Lambert, Nathan and Zick, Tom},
-  _venue={Transactions on Technology and Society (TTS)},
-  title={Axes for Sociotechnical Inquiry in AI Research},
-  year={2021},
-  _note={Authors arranged alphabetically},
-  url={https://arxiv.org/abs/2105.06551},
-}
-
-@article{zhang2020hyper,
-  title={On the Importance of Hyperparameter Optimization for Model-based Reinforcement Learning
-},
-  author={Zhang, Baohe and Rajan, Raghu and Pineda, Luis and Lambert, Nathan  and Biedenkapp, André and Chua, Kurtland and Hutter, Frank and Calandra, Roberto},
-  _venue={International Conference on
-Artificial Intelligence and Statistics (AISTATS)},
-url={https://arxiv.org/abs/2102.13651},
-  year={2021}
-}
-
-@article{mckane2020aidev,
-  title={AI Development for the Public Interest: From Abstraction Traps to Sociotechnical Risks},
-  author={Andrus, McKane and Dean, Sarah and Gilbert, Thomas and Lambert, Nathan  and Zick, Tom},
-  _venue={International Symposium on Technology and Society (ISTATS)},
-  year={2020},
-  url={https://arxiv.org/abs/2102.04255},
-  _note={Authors arranged alphabetically},
-}
-
-@article{lambert2020learning,
-  title={Learning Accurate Long-term Dynamics for Model-based Reinforcement Learning},
-  author={Lambert, Nathan and Wilcox, Albert and Zhang, Howard and Pister, Kristofer SJ and Calandra, Roberto},
-  _venue={International Conference on Decision and Control (CDC)},
-  year={2021},
-  selected={true},
-  url={https://arxiv.org/abs/2012.09156},
-  codeurl={https://github.com/natolambert/continuousprediction}
-}
-
-@ARTICLE{9300244,
-  author={Lambert, Nathan and Schindler, Craig and Drew, Daniel and Pister, Kristofer},
-  _venue={Robotics and Automation Letters (RAL)},
-  title={Nonholonomic Yaw Control of an Underactuated Flying Robot With Model-Based Reinforcement Learning},
-  year={2021},
-  url={https://arxiv.org/abs/2009.01221},
-  selected={true}
-  }
-
-
-@article{lambert2020micro,
-  title={Learning for Microrobot Exploration: Model-based Locomotion, Robust Navigation, and Low-Power Deep Classification},
-  author={Lambert, Nathan and Toddywala, Fahran and Liao, Brian and Zhu, Eric  and Lee, Lydia and Pister, Kristofer},
-  _venue={International Conference on Manipulation, Automation and Robotics at Small Scales (MARSS)},
-  url={https://arxiv.org/abs/2004.13194},
-  year={2020}
-}
-
-
-@article{hier-daisy,
-  title={Learning  Generalizable  Locomotion  Skills  with  HierarchicalReinforcement  Learning},
-  author={Li, Tianyu and Lambert, Nathan and Calandra, Roberto and Rai, Akshara  and Meier, Franziska},
-  _venue={International Conference on Robotics and Automation (ICRA)},
-  year={2020},
-  url={https://arxiv.org/abs/1909.12324},
-  _talkurl={https://www.youtube.com/watch?v=S7BdwYZQKHQ}
-}
-
-@ARTICLE{8769882,
-author={Lambert, Nathan and Drew, Daniel and Yaconelli, Joseph and Levine, Sergey and Calandra, Roberto and Pister, Kristofer},
-_venue={Robotics and Automation Letters (RAL)},
-title={Low-Level Control of a Quadrotor With Deep Model-Based Reinforcement Learning},
-year={2019},
-selected={true},
-url={https://arxiv.org/abs/1901.03737},
-codeurl={https://github.com/natolambert/dynamicslearn},
-_talkurl={https://www.youtube.com/watch?v=BAHxRRgdCt4}
-}
-
-
-@article{drew2018toward,
-  title={Toward Controlled Flight of the Ionocraft: A Flying Microrobot Using Electrohydrodynamic Thrust With Onboard Sensing and No Moving Parts},
-  author={Drew, Daniel S and Lambert, Nathan and Schindler, Craig B and Pister, Kristofer},
-  _venue={Robotics and Automation Letters (RAL)},
-  year={2018},
-  _talkurl={https://www.youtube.com/watch?v=6rDBV12sCB4}
-}
-
-@article{Vinayakumar2017,
-    author = {Vinayakumar, K. B. and Gund, V. and Lambert, Nathan and Lodha, S. and Lal, A.},
-    doi = {10.1109/ICSENS.2016.7808451},
-    _venue = {Sensors},
-    title = {{Enhanced lithium niobate pyroelectric ionizer for chip-scale ion mobility-based gas sensing}},
-    year = {2017}
-}

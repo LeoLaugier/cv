@@ -1,4 +1,4 @@
-\documentclass[11pt,letter,sans,colorlinks,linkcolor=true]{moderncv}
+\documentclass[11pt,letter,sans,colorlinks,linkcolor=blue]{moderncv}
 \DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
 \DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
 \DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
@@ -82,19 +82,22 @@
 % }
 
 \usepackage{lastpage}
-\cfoot{\addressfont\textcolor{gray}{\hypersetup{allcolors=gray}Page \thepage\ of \pageref{LastPage}}}
+% \cfoot{\addressfont\textcolor{gray}{\hypersetup{allcolors=gray}Page \thepage\ of \pageref{LastPage}}}
 
 \AtEndPreamble{\hypersetup{pdftitle={CV -- << name.first >> << name.last >>}}}
 \name{<< name.first >>}{<< name.last >>}
 %\title{Resumé title}
 %\address{street and number}{postcode city}{country}
-% \phone{<< phone >>}
+\phone{<< phone >>}
 \email{<< email >>}
 \homepage{<< url >>}
+% https://ctan.math.washington.edu/tex-archive/macros/latex/contrib/moderncv/manual/moderncv_userguide.pdf
 \social[linkedin]{<<social.linkedin>>}
-\social[twitter]{<<social.twitter>>}
+\social[googlescholar]{<<social.google_scholar>>}
+\social[orcid]{<<social.orcid>>}
 \social[github]{<<social.github>>}
-\extrainfo{\small Last updated on \today}
+%\extrainfo{\small Last updated on \today}
+\extrainfo{U.S. Legal Permanent Resident (Green Card Holder)}
 %\photo[64pt][0.4pt]{picture}
 % \quote{Generated on \today}
 
